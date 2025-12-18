@@ -1,0 +1,980 @@
+[
+  {
+    "id": 9,
+    "name": "Emperor Liver Flavour Dog Food",
+    "price": 250.00,
+    "image": "./assets/images/emperor-adult.png",
+    "imageHover": "./assets/images/emperor-adult.png",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Dog Food",
+    "description": "Give your dog the nourishment they need with Emperor Liver Flavour, a scientifically formulated recipe designed to support complete and balanced nutrition for dogs of all breeds and ages. Crafted with high-quality ingredients and fortified with essential nutrients, this formula promotes optimal health, vitality, and longevity.",
+    "benefits": [
+      {
+        "title": "Gut Health & Digestive Function",
+        "description": "Prebiotic fibre promotes a balanced gut microbiome, while dietary fibre supports digestive regularity and nutrient absorption."
+      },
+      {
+        "title": "Skeletal Development & Joint Support",
+        "description": "Glucosamine and chondroitin, combined with an ideal calcium-to-phosphorus ratio, help maintain strong bones and flexible joints."
+      },
+      {
+        "title": "Cognitive Development",
+        "description": "DHA omega-3 fatty acids support brain health and cognitive function, especially in growing puppies."
+      },
+      {
+        "title": "Heart Health",
+        "description": "Taurine contributes to cardiovascular wellness and supports heart function."
+      }
+    ],
+    "ingredients": [
+      "Cereals (min 4% rice)",
+      "Meat & animal derivatives (min 26% chicken)",
+      "Vegetable protein",
+      "Fats & oils",
+      "Vegetables",
+      "Minerals & vitamins",
+      "Natural clay minerals",
+      "Glucosamine & chondroitin",
+      "Taurine",
+      "Approved antioxidant"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein (min)": "280g",
+      "Moisture (min)": "100g",
+      "Crude Fat (min)": "140g",
+      "Linoleic Acid (min)": "25g",
+      "Omega 6:3 Ratio": "5–10:1",
+      "Crude Fibre (max)": "30g",
+      "Calcium (max)": "12g",
+      "Phosphorus (min)": "9g",
+      "Ca:P Ratio": "1.1–1.5:1",
+      "Glucosamine & Chondroitin": "800mg",
+      "Taurine (min)": "500mg",
+      "DHA (min)": "300mg"
+    },
+    "features": [
+      "Fish-Free",
+      "No Pork",
+      "Soy-Free",
+      "No Added Sugar",
+      "No Artificial Colours or Preservatives"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Emperor Adult Small Breed Food",
+    "price": 250.00,
+    "image": "./assets/images/emperor-small-breed.png",
+    "imageHover": "./assets/images/emperor-small-breed.png",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Dog Food",
+    "description": "At Emperor, we believe in inclusive nutrition that respects religious dietary preferences. That’s why our food is 100% pork-free, using poultry as the sole animal protein source—making it ideal for pets with sensitivities or intolerances to other proteins. Formulated with hydrolysed poultry protein and liver flavour, this recipe delivers essential amino acids and fatty acids in a highly digestible, delicious pellet that supports your dog’s overall health and vitality.",
+    "benefits": [
+      {
+        "title": "Gut Health & Function",
+        "description": "Prebiotic fibre promotes a balanced gut microbiome, while dietary fibre supports digestive regularity and comfort."
+      },
+      {
+        "title": "Skeletal Development",
+        "description": "Glucosamine and chondroitin, combined with an optimal calcium-to-phosphorus ratio, support joint health and bone strength."
+      },
+      {
+        "title": "Cognitive Development",
+        "description": "DHA omega-3 fatty acids help support brain development and mental sharpness."
+      },
+      {
+        "title": "Heart Health",
+        "description": "Taurine contributes to cardiovascular function and heart wellness."
+      }
+    ],
+    "ingredients": [
+      "Cereals (min 4% rice)",
+      "Meat & animal derivatives (min 26% chicken)",
+      "Vegetable protein",
+      "Fats & oils",
+      "Vegetables",
+      "Minerals & vitamins",
+      "Natural clay minerals",
+      "Glucosamine & chondroitin",
+      "Taurine",
+      "Approved antioxidant"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "250g",
+      "Moisture": "100g",
+      "Crude Fat": "120g",
+      "Linoleic Acid": "25g",
+      "Omega 6:3 Ratio": "5–10:1",
+      "Crude Fibre": "Max 30g",
+      "Calcium": "Max 12g",
+      "Phosphorus": "Min 9g",
+      "Ca:P Ratio": "1.1–1.5:1",
+      "Glucosamine & Chondroitin": "800mg",
+      "Taurine": "Min 500mg",
+      "DHA": "Min 300mg"
+    },
+    "features": [
+      "Fish-Free",
+      "No Pork",
+      "Soy-Free",
+      "No Added Sugar",
+      "No Artificial Colours or Preservatives"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Emperor Puppy Food",
+    "price": 245.00,
+    "image": "./assets/images/emperor-puppy.png",
+    "imageHover": "./assets/images/emperor-puppy.png",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Dog Food",
+    "description": "Give your dog the nourishment they need with Emperor Liver Flavour, a scientifically formulated recipe designed to support complete and balanced nutrition for dogs of all breeds and ages. Crafted with high-quality ingredients and fortified with essential nutrients, this formula promotes optimal health, vitality, and longevity.",
+    "benefits": [
+      {
+        "title": "Gut Health & Digestive Function",
+        "description": "Prebiotic fibre promotes a balanced gut microbiome, while dietary fibre supports digestive regularity and nutrient absorption."
+      },
+      {
+        "title": "Skeletal Development & Joint Support",
+        "description": "Glucosamine and chondroitin, combined with an ideal calcium-to-phosphorus ratio, help maintain strong bones and flexible joints."
+      },
+      {
+        "title": "Cognitive Development",
+        "description": "DHA omega-3 fatty acids support brain health and cognitive function, especially in growing puppies."
+      },
+      {
+        "title": "Heart Health",
+        "description": "Taurine contributes to cardiovascular wellness and supports heart function."
+      }
+    ],
+    "ingredients": [
+      "Cereals (min 4% rice)",
+      "Meat & animal derivatives (min 26% chicken)",
+      "Vegetable protein",
+      "Fats & oils",
+      "Vegetables",
+      "Minerals & vitamins",
+      "Natural clay minerals",
+      "Glucosamine & chondroitin",
+      "Taurine",
+      "Approved antioxidant"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein (min)": "280g",
+      "Moisture (min)": "100g",
+      "Crude Fat (min)": "140g",
+      "Linoleic Acid (min)": "25g",
+      "Omega 6:3 Ratio": "5–10:1",
+      "Crude Fibre (max)": "30g",
+      "Calcium (max)": "12g",
+      "Phosphorus (min)": "9g",
+      "Ca:P Ratio": "1.1–1.5:1",
+      "Glucosamine & Chondroitin": "800mg",
+      "Taurine (min)": "500mg",
+      "DHA (min)": "300mg"
+    },
+    "features": [
+      "Fish-Free",
+      "No Pork",
+      "Soy-Free",
+      "No Added Sugar",
+      "No Artificial Colours or Preservatives"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Brit Premium | Dog Adult Medium (1kg / 3kg/ 8kg / 15kg)",
+    "price": 142.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/Junior-Medium-Group-Image_1200x1200.jpg?v=1746607993",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/Junior-Medium-Group-Image_1200x1200.jpg?v=1746607993",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Adult Dogs of Medium Breeds (10-25 kg).",
+    "variants": [
+      {
+        "size": "1kg",
+        "price": 142.00
+      },
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "8kg",
+        "price": 747.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Healthy Skin",
+        "description": "Healthy skin and lustrous fur"
+      },
+      {
+        "title": "Digestibility",
+        "description": "Excellent digestibility"
+      },
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (45%)",
+      "Oats",
+      "Wheat",
+      "Chicken fat",
+      "Corn",
+      "Dried apple pulp",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (210 mg/kg)",
+      "Chondroitine sulphate (150 mg/kg)",
+      "Herbs & fruit (120 mg/kg)",
+      "Mannan-oligosaccharides (120 mg/kg)",
+      "Fructo-oligosaccharides (90 mg/kg)",
+      "Mojave yucca (90 mg/kg)",
+      "Dried chamomile (80 mg/kg)",
+      "Glycosaminoglycans (50 mg/kg)",
+      "Dried blueberries (50 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "26.0%",
+      "Crude Fat": "15.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.0%",
+      "Crude Fibre": "2.2%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.2%",
+      "Omega 6": "1.6%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,770 kcal/kg"
+  },
+  {
+    "id": 13,
+    "name": "Brit Premium | Dog Junior Small (1kg / 3kg )",
+    "price": 142.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_s_1200x1200.png?v=1746608900",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_s_1200x1200.png?v=1746608900",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Junior Dogs (1–12 months) of Small Breeds (1-10 kg). Also suitable for pregnant & nursing bitches.",
+    "variants": [
+      {
+        "size": "1kg",
+        "price": 142.00
+      },
+      {
+        "size": "3kg",
+        "price": 319.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      },
+      {
+        "title": "Growth Support",
+        "description": "Optimal muscle and body growth"
+      },
+      {
+        "title": "Development",
+        "description": "Healthy structure, bone, joint, and teeth development"
+      },
+      {
+        "title": "Special Needs",
+        "description": "Ideal for pregnant and nursing dogs"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (55%)",
+      "Chicken fat",
+      "Oats",
+      "Wheat",
+      "Salmon oil (2%)",
+      "Corn",
+      "Dried apple pulp",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (260 mg/kg)",
+      "Chondroitine sulphate (180 mg/kg)",
+      "Herbs & fruit (150 mg/kg)",
+      "Mannan-oligosaccharides (150 mg/kg)",
+      "Fructo-oligosaccharides (100 mg/kg)",
+      "Mojave yucca (100 mg/kg)",
+      "Dried chamomile (90 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "32.0%",
+      "Crude Fat": "20.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "6.8%",
+      "Crude Fibre": "2.0%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.3%",
+      "Omega 6": "2.7%"
+    },
+    "additives": {
+      "Vitamin A": "20,000 I.U.",
+      "Vitamin D3": "1,400 I.U.",
+      "Vitamin E": "500 mg",
+      "Biotin": "0.6 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "80 mg",
+      "Iron": "70 mg",
+      "Manganese": "35 mg",
+      "Iodine": "0.65 mg",
+      "Copper": "16 mg",
+      "Selenium": "0.25 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "4,200 kcal/kg"
+  },
+  {
+    "id": 14,
+    "name": "Brit Premium | Dog Adult Small (1kg / 3kg / 8kg)",
+    "price": 142.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/Junior-Small-1kg_1200x1200.jpg?v=1746607691",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/Junior-Small-1kg_1200x1200.jpg?v=1746607691",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Adult Dogs of Small Breeds (1-10 kg).",
+    "variants": [
+      {
+        "size": "1kg",
+        "price": 142.00
+      },
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "8kg",
+        "price": 747.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Healthy Skin",
+        "description": "Healthy skin and lustrous fur"
+      },
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      },
+      {
+        "title": "Heart Health",
+        "description": "Anti-stress factor for supporting heart functions"
+      }
+    ],
+    "ingredients": [
+      "Chicken 50% (dehydrated 30%, deboned 20%)",
+      "Oats",
+      "Wheat",
+      "Chicken fat",
+      "Corn",
+      "Dried apples",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Crustacean shells (glucosamine source 210 mg/kg)",
+      "Cartilage (chondroitin source 150 mg/kg)",
+      "Herbs & fruit (120 mg/kg)",
+      "Mannan-oligosaccharides (120 mg/kg)",
+      "Fructo-oligosaccharides (90 mg/kg)",
+      "Mojave yucca (90 mg/kg)",
+      "Dried chamomile (80 mg/kg)",
+      "Green-lipped mussels (50 mg/kg)",
+      "Dried blueberries (50 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "28.0%",
+      "Crude Fat": "16.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.2%",
+      "Crude Fibre": "2.5%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.2%",
+      "Omega 6": "1.9%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,910 kcal/kg"
+  },
+  {
+    "id": 15,
+    "name": "Brit Premium | Dog Light Turkey & Oat (3kg/ 15kg)",
+    "price": 319.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_light_1200x1200.png?v=1746609519",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_light_1200x1200.png?v=1746609519",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Turkey & Oat Formula for Overweight Dogs of All Breeds.",
+    "variants": [
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Weight Management",
+        "description": "Optimal weight regulation"
+      },
+      {
+        "title": "Joint Support",
+        "description": "Joint nutrition and mobility support"
+      },
+      {
+        "title": "Heart Health",
+        "description": "Anti-stress factor for supporting heart functions"
+      }
+    ],
+    "ingredients": [
+      "Turkey dehydrated (30%)",
+      "Chicken dehydrated (10%)",
+      "Oats",
+      "Wheat",
+      "Dried apple pulp",
+      "Bamboo lignocellulose",
+      "Corn",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Chicken fat",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (260 mg/kg)",
+      "Chondroitine sulphate (180 mg/kg)",
+      "Herbs & fruit (150 mg/kg)",
+      "Mannan-oligosaccharides (150 mg/kg)",
+      "Fructo-oligosaccharides (100 mg/kg)",
+      "Mojave yucca (100 mg/kg)",
+      "Dried chamomile (90 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "25.0%",
+      "Crude Fat": "8.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.6%",
+      "Crude Fibre": "6.5%",
+      "Calcium": "1.6%",
+      "Phosphorus": "1.2%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.23%",
+      "Omega 6": "1.3%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "L-carnitine": "300 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,120 kcal/kg"
+  },
+  {
+    "id": 16,
+    "name": "Brit Premium | Dog Senior Small & Medium (3kg / 8kg / 15kg)",
+    "price": 319.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_s-m_1200x1200.png?v=1746609706",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_s-m_1200x1200.png?v=1746609706",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Senior Dogs (+7 years) of Small & Medium Breeds (1-25 kg).",
+    "variants": [
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "8kg",
+        "price": 747.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Heart Health",
+        "description": "Anti-stress factor for supporting heart functions"
+      },
+      {
+        "title": "Weight Management",
+        "description": "Optimal weight regulation"
+      },
+      {
+        "title": "Joint Support",
+        "description": "Joint nutrition and mobility support"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (42%)",
+      "Oats",
+      "Wheat",
+      "Corn",
+      "Dried apple pulp",
+      "Chicken fat",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (210 mg/kg)",
+      "Chondroitine sulphate (150 mg/kg)",
+      "Herbs & fruit (120 mg/kg)",
+      "Mannan-oligosaccharides (120 mg/kg)",
+      "Fructo-oligosaccharides (90 mg/kg)",
+      "Mojave yucca (90 mg/kg)",
+      "Dried chamomile (80 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "25.0%",
+      "Crude Fat": "13.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.8%",
+      "Crude Fibre": "3.0%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.2%",
+      "Omega 6": "1.5%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,610 kcal/kg"
+  },
+  {
+    "id": 17,
+    "name": "Brit Premium | Dog Junior Medium (1kg / 3kg / 15kg)",
+    "price": 142.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_m_1200x1200.png?v=1746609076",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_m_1200x1200.png?v=1746609076",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Junior Dogs (1-12 months) of Medium Breeds (10-25 kg).",
+    "variants": [
+      {
+        "size": "1kg",
+        "price": 142.00
+      },
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Development",
+        "description": "Healthy structure, bone, joint, and teeth development"
+      },
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      },
+      {
+        "title": "Growth Support",
+        "description": "Optimal muscle and body growth"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (50%)",
+      "Oats",
+      "Wheat",
+      "Chicken fat",
+      "Corn",
+      "Salmon oil (2%)",
+      "Dried apple pulp",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (260 mg/kg)",
+      "Chondroitine sulphate (180 mg/kg)",
+      "Herbs & fruit (150 mg/kg)",
+      "Mannan-oligosaccharides (150 mg/kg)",
+      "Fructo-oligosaccharides (100 mg/kg)",
+      "Mojave yucca (100 mg/kg)",
+      "Dried chamomile (90 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "31.0%",
+      "Crude Fat": "18.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "6.8%",
+      "Crude Fibre": "2.0%",
+      "Calcium": "1.4%",
+      "Phosphorus": "1.0%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.3%",
+      "Omega 6": "2.4%"
+    },
+    "additives": {
+      "Vitamin A": "18,000 I.U.",
+      "Vitamin D3": "1,200 I.U.",
+      "Vitamin E": "500 mg",
+      "Biotin": "0.55 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "75 mg",
+      "Iron": "65 mg",
+      "Manganese": "32 mg",
+      "Iodine": "0.55 mg",
+      "Copper": "14 mg",
+      "Selenium": "0.22 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "4,060 kcal/kg"
+  },
+  {
+    "id": 18,
+    "name": "Brit Premium | Dog Junior Large (3kg/ 15kg)",
+    "price": 319.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_l_1200x1200.png?v=1746609206",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_l_1200x1200.png?v=1746609206",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Junior Dogs (1-24 months) of Large Breeds (25-45 kg).",
+    "variants": [
+      {
+        "size": "3kg",
+        "price": 319.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Development",
+        "description": "Healthy structure, bone, joint, and teeth development"
+      },
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      },
+      {
+        "title": "Growth Support",
+        "description": "Optimal muscle and body growth"
+      }
+    ],
+    "ingredients": [
+      "Chicken 45% (dehydrated 25%, deboned 20%)",
+      "Oats",
+      "Wheat",
+      "Chicken fat",
+      "Corn",
+      "Salmon oil (2%)",
+      "Dried apple pulp",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (260 mg/kg)",
+      "Chondroitine sulphate (180 mg/kg)",
+      "Herbs & fruit (150 mg/kg)",
+      "Mannan-oligosaccharides (150 mg/kg)",
+      "Fructo-oligosaccharides (100 mg/kg)",
+      "Mojave yucca (100 mg/kg)",
+      "Dried chamomile (90 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "28.0%",
+      "Crude Fat": "16.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.2%",
+      "Crude Fibre": "2.5%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.15%",
+      "Omega 3": "0.25%",
+      "Omega 6": "2.1%"
+    },
+    "additives": {
+      "Vitamin A": "18,000 I.U.",
+      "Vitamin D3": "1,200 I.U.",
+      "Vitamin E": "500 mg",
+      "Biotin": "0.55 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "75 mg",
+      "Iron": "65 mg",
+      "Manganese": "32 mg",
+      "Iodine": "0.55 mg",
+      "Copper": "14 mg",
+      "Selenium": "0.22 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,830 kcal/kg"
+  },
+  {
+    "id": 19,
+    "name": "Brit Premium | Dog Adult Large (8kg/ 15kg)",
+    "price": 747.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_adult_l_1200x1200.png?v=1746608250",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_adult_l_1200x1200.png?v=1746608250",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula Adult Dogs of Large Breeds (25-45 kg).",
+    "variants": [
+      {
+        "size": "8kg",
+        "price": 747.00
+      },
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Joint Support",
+        "description": "Joint nutrition and mobility support"
+      },
+      {
+        "title": "Healthy Skin",
+        "description": "Healthy skin and lustrous fur"
+      },
+      {
+        "title": "Immunity Support",
+        "description": "Supports immunity and condition"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (45%)",
+      "Oats",
+      "Wheat",
+      "Chicken fat",
+      "Corn",
+      "Dried apple pulp",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (210 mg/kg)",
+      "Chondroitine sulphate (150 mg/kg)",
+      "Herbs & fruit (120 mg/kg)",
+      "Mannan-oligosaccharides (120 mg/kg)",
+      "Fructo-oligosaccharides (90 mg/kg)",
+      "Mojave yucca (90 mg/kg)",
+      "Dried chamomile (80 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "27.0%",
+      "Crude Fat": "14.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.0%",
+      "Crude Fibre": "2.0%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.2%",
+      "Omega 6": "1.6%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,770 kcal/kg"
+  },
+  {
+    "id": 20,
+    "name": "Brit Premium | Dog Senior Large & X Large (15kg)",
+    "price": 1277.00,
+    "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_l-xl_1200x1200.png?v=1746609814",
+    "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_l-xl_1200x1200.png?v=1746609814",
+    "rating": 0,
+    "reviews": 0,
+    "category": "Brit Premium",
+    "description": "Complete Chicken Formula for Senior Dogs (+7 years) of Large and Extra Large Breeds (25-90 kg).",
+    "variants": [
+      {
+        "size": "15kg",
+        "price": 1277.00
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Joint Support",
+        "description": "Joint nutrition and mobility support"
+      },
+      {
+        "title": "Heart Health",
+        "description": "Anti-stress factor for supporting heart functions"
+      },
+      {
+        "title": "Weight Management",
+        "description": "Optimal weight regulation"
+      }
+    ],
+    "ingredients": [
+      "Chicken dehydrated (45%)",
+      "Oats",
+      "Wheat",
+      "Corn",
+      "Dried apple pulp",
+      "Chicken fat",
+      "Salmon oil (2%)",
+      "Hydrolyzed chicken liver",
+      "Brewer's yeast",
+      "Collagen",
+      "Glucosamine (260 mg/kg)",
+      "Chondroitine sulphate (200 mg/kg)",
+      "Herbs & fruit (120 mg/kg)",
+      "Mannan-oligosaccharides (120 mg/kg)",
+      "Fructo-oligosaccharides (90 mg/kg)",
+      "Mojave yucca (90 mg/kg)",
+      "Dried chamomile (80 mg/kg)"
+    ],
+    "nutritionalInfo": {
+      "Crude Protein": "27.0%",
+      "Crude Fat": "14.0%",
+      "Moisture": "10.0%",
+      "Crude Ash": "7.2%",
+      "Crude Fibre": "3.0%",
+      "Calcium": "1.5%",
+      "Phosphorus": "1.1%",
+      "Sodium": "0.2%",
+      "Omega 3": "0.18%",
+      "Omega 6": "1.4%"
+    },
+    "additives": {
+      "Vitamin A": "15,000 I.U.",
+      "Vitamin D3": "1,000 I.U.",
+      "Vitamin E": "400 mg",
+      "Biotin": "0.5 mg",
+      "Choline Chloride": "1,800 mg",
+      "Zinc": "70 mg",
+      "Iron": "60 mg",
+      "Manganese": "30 mg",
+      "Iodine": "0.5 mg",
+      "Copper": "12 mg",
+      "Selenium": "0.2 mg"
+    },
+    "antioxidants": [
+      "Tocopherol extracts from vegetable oil",
+      "Ascorbyl palmitate",
+      "Rosemary extract"
+    ],
+    "metabolizableEnergy": "3,690 kcal/kg"
+  }
+]

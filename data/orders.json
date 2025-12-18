@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ORD-1764795948531-257",
+    "date": "2025-12-03T21:05:48.531Z",
+    "status": "Placed",
+    "items": [
+      {
+        "id": 9,
+        "name": "Emperor Adult Food",
+        "price": 250,
+        "image": "./assets/images/product-6.jpg",
+        "imageHover": "./assets/images/product-6_0.jpg",
+        "rating": 0,
+        "reviews": 0,
+        "category": "Dog Food",
+        "description": "Complete and balanced nutrition for adult dogs.",
+        "quantity": 4
+      }
+    ],
+    "total": 1000,
+    "customer": {
+      "name": "Test User",
+      "address": "123 Test St",
+      "city": "Test City",
+      "zip": "12345",
+      "paymentMethod": "card"
+    }
+  },
+  {
+    "id": "ORD-1764796473673-679",
+    "date": "2025-12-03T21:14:33.673Z",
+    "status": "Placed",
+    "items": [
+      {
+        "id": 9,
+        "name": "Emperor Adult Food",
+        "price": 250,
+        "image": "./assets/images/emperor-adult.png",
+        "imageHover": "./assets/images/emperor-adult.png",
+        "rating": 0,
+        "reviews": 0,
+        "category": "Dog Food",
+        "description": "Complete and balanced nutrition for adult dogs.",
+        "quantity": 1
+      }
+    ],
+    "total": 250,
+    "customer": {
+      "name": "Test User",
+      "address": "123 Test St",
+      "city": "Test City",
+      "zip": "12345",
+      "paymentMethod": "card"
+    }
+  },
+  {
+    "id": "ORD-1765272652637-523",
+    "date": "2025-12-09T09:30:52.637Z",
+    "status": "Placed",
+    "items": [
+      {
+        "id": 9,
+        "name": "Emperor Adult Food",
+        "price": 250,
+        "image": "./assets/images/emperor-adult.png",
+        "imageHover": "./assets/images/emperor-adult.png",
+        "rating": 0,
+        "reviews": 0,
+        "category": "Dog Food",
+        "description": "Complete and balanced nutrition for adult dogs.",
+        "quantity": 3
+      },
+      {
+        "id": 11,
+        "name": "Emperor Puppy Food",
+        "price": 245,
+        "image": "./assets/images/emperor-puppy.png",
+        "imageHover": "./assets/images/emperor-puppy.png",
+        "rating": 0,
+        "reviews": 0,
+        "category": "Dog Food",
+        "description": "Essential nutrients for growing puppies.",
+        "quantity": 3
+      },
+      {
+        "id": "8-sub-every-week-2025-12-23",
+        "name": "Etiam commodo leo sed (Subscribed - Every week, Starts: 2025-12-23)",
+        "price": 52.25,
+        "image": "./assets/images/product-8.jpg",
+        "imageHover": "./assets/images/product-8_0.jpg",
+        "rating": 0,
+        "reviews": 0,
+        "category": "Toys",
+        "description": "Interactive toy that stimulates your pet's mind and encourages physical activity.",
+        "quantity": 1
+      }
+    ],
+    "total": 1537.25,
+    "customer": {
+      "name": "Test User",
+      "address": "123 Test Ave",
+      "city": "Testville",
+      "zip": "90210",
+      "paymentMethod": "card"
+    }
+  }
+]

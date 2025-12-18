@@ -1,0 +1,231 @@
+/* Checkout Page Styles */
+
+.checkout {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.checkout-form-wrapper {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: var(--fs-4);
+    border-bottom: 2px solid var(--orange-soda);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--fw-700);
+    color: var(--black);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gainsboro);
+    border-radius: 5px;
+    font-size: var(--fs-6);
+    transition: 0.25s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--orange-soda);
+    outline: none;
+}
+
+/* Payment Card Visual */
+.payment-card-visual {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 25px;
+    color: white;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-chip {
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #d4af37, #f9e076);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card-logo {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-number-display {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-details-row {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/* Order Summary */
+.order-summary {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.summary-title {
+    margin-bottom: 20px;
+    font-size: var(--fs-4);
+}
+
+.summary-list {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gainsboro);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: var(--fs-6);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-4);
+    font-weight: var(--fw-700);
+    color: var(--orange-soda);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.success-icon {
+    font-size: 60px;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+/* Payment Method Select */
+.payment-method-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.method-option {
+    cursor: pointer;
+}
+
+.method-option input {
+    display: none;
+}
+
+.method-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid var(--gainsboro);
+    border-radius: 10px;
+    transition: 0.25s ease;
+    height: 100%;
+}
+
+.method-option input:checked+.method-label {
+    border-color: var(--orange-soda);
+    background-color: rgba(255, 122, 53, 0.05);
+}
+
+.method-logos {
+    display: flex;
+    gap: 10px;
+}
+
+.paypal-text {
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: var(--fs-6);
+    color: var(--black);
+}

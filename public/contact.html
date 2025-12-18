@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kitter</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--orange-soda);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: var(--fs-4);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p,
+        .contact-details a {
+            color: var(--davys-gray);
+            font-size: var(--fs-6);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: var(--fw-700);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid var(--gainsboro);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            border-color: var(--orange-soda);
+            outline: none;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
+            </button>
+
+            <a href="/" class="logo">Kitter</a>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a href="/#home" class="navbar-link" data-nav-link>Home</a></li>
+                    <li class="navbar-item"><a href="/#shop" class="navbar-link" data-nav-link>Shop</a></li>
+                    <li class="navbar-item"><a href="/collections.html" class="navbar-link"
+                            data-nav-link>Collections</a></li>
+                    <li class="navbar-item"><a href="/blog.html" class="navbar-link" data-nav-link>Blogs</a></li>
+                    <li class="navbar-item"><a href="/contact.html" class="navbar-link" data-nav-link>Contact</a></li>
+                </ul>
+                <a href="/login.html" class="navbar-action-btn">Log In</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="action-btn" aria-label="Search"><ion-icon name="search-outline"
+                        aria-hidden="true"></ion-icon></button>
+                <a href="/login.html" class="action-btn user" aria-label="User"><ion-icon name="person-outline"
+                        aria-hidden="true"></ion-icon></a>
+                <button class="action-btn" aria-label="cart" data-cart-toggler>
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge" data-cart-badge>0</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" data-cart-sidebar>
+        <div class="cart-header">
+            <h2 class="h2 section-title">Your Cart</h2>
+            <button class="nav-toggle-btn active" aria-label="close cart" data-cart-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+        </div>
+        <ul class="cart-item-list" data-cart-list></ul>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <p class="h3">Total:</p>
+                <p class="h3" data-cart-total>R0.00</p>
+            </div>
+            <button class="btn btn-primary" onclick="window.location.href='/checkout.html'">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" data-cart-toggler></div>
+
+    <main>
+        <article>
+            <section class="section hero has-bg-image"
+                style="background-image: url('./assets/images/hero-banner.jpg'); min-height: 300px; display: flex; align-items: center;">
+                <div class="container">
+                    <h1 class="h1 hero-title"><span class="span">Contact</span> Us</h1>
+                    <p class="hero-text">We'd love to hear from you.</p>
+                </div>
+            </section>
+
+            <section class="section contact-section">
+                <div class="container">
+                    <div class="contact-grid">
+
+                        <div class="contact-info">
+                            <h2 class="h2 section-title" style="margin-bottom: 30px;">Get In Touch</h2>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><ion-icon name="location-outline"></ion-icon></div>
+                                <div class="contact-details">
+                                    <h3>Address</h3>
+                                    <p>30 Buttonwood St. Pataskala OH 43062</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><ion-icon name="call-outline"></ion-icon></div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <a href="tel:+16234567891011">(+1)-6234-56-789-1011</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <a href="mailto:support@gmail.com">support@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Your Name</label>
+                                    <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Your Email</label>
+                                    <input type="email" id="email" class="form-input" placeholder="john@example.com"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="message">Message</label>
+                                    <textarea id="message" class="form-input" placeholder="How can we help you?"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.jpg')">
+        <div class="footer-top section">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Kitter</a>
+                    <p class="footer-text">If you have any question, please contact us at <a
+                            href="mailto:support@gmail.com" class="link">support@gmail.com</a></p>
+                    <ul class="contact-list">
+                        <li class="contact-item"><ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                            <address class="address">30 Buttonwood St.Pataskala OH 43062</address>
+                        </li>
+                        <li class="contact-item"><ion-icon name="call-outline" aria-hidden="true"></ion-icon><a
+                                href="tel:+16234567891011" class="contact-link">(+1)-6234-56-789-1011</a></li>
+                    </ul>
+                    <ul class="social-list">
+                        <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#" class="social-link"><ion-icon name="logo-pinterest"></ion-icon></a></li>
+                        <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </div>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Corporate</p>
+                    </li>
+                    <li><a href="#" class="footer-link">Careers</a></li>
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                    <li><a href="#" class="footer-link">FAQs</a></li>
+                    <li><a href="#" class="footer-link">Vendors</a></li>
+                    <li><a href="#" class="footer-link">Affiliate Program</a></li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Information</p>
+                    </li>
+                    <li><a href="#" class="footer-link">Online Store</a></li>
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-link">Refund Policy</a></li>
+                    <li><a href="#" class="footer-link">Shipping Policy</a></li>
+                    <li><a href="#" class="footer-link">Terms of Service</a></li>
+                    <li><a href="#" class="footer-link">Track Order</a></li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Services</p>
+                    </li>
+                    <li><a href="#" class="footer-link">Grooming</a></li>
+                    <li><a href="#" class="footer-link">Positive Dog Training</a></li>
+                    <li><a href="#" class="footer-link">Veterinary Services</a></li>
+                    <li><a href="#" class="footer-link">Petco Insurance</a></li>
+                    <li><a href="#" class="footer-link">Pet Adoption</a></li>
+                    <li><a href="#" class="footer-link">Resource Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2022 Made with ♥ by <a href="#" class="copyright-link">codewithsadee.</a>
+                </p>
+                <img src="./assets/images/payment.png" width="397" height="32" loading="lazy" alt="payment method"
+                    class="img">
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <script src="./assets/js/script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

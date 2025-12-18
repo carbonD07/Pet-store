@@ -1,0 +1,127 @@
+/* Order Tracker Styles */
+
+.tracker {
+    padding-block: var(--section-padding);
+}
+
+.tracker-form-wrapper {
+    max-width: 500px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    border: 1px solid var(--platinum);
+    border-radius: var(--radius-10);
+    background-color: var(--white);
+    box-shadow: var(--shadow-2);
+}
+
+.tracker-form .form-group {
+    margin-bottom: 20px;
+}
+
+.tracker-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--fw-700);
+    color: var(--black);
+}
+
+.tracker-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--platinum);
+    border-radius: var(--radius-5);
+    outline: none;
+    transition: var(--transition);
+}
+
+.tracker-form input:focus {
+    border-color: var(--orange-soda);
+}
+
+.tracker-status {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.status-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 40px;
+}
+
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--platinum);
+    z-index: -1;
+}
+
+.status-step {
+    text-align: center;
+    background-color: var(--white);
+    padding: 0 10px;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--platinum);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 24px;
+    color: var(--gray-web);
+    transition: var(--transition);
+}
+
+.status-step.completed .step-icon,
+.status-step.active .step-icon {
+    background-color: var(--orange-soda);
+    color: var(--white);
+}
+
+.step-label {
+    font-weight: var(--fw-700);
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.step-date {
+    font-size: var(--fs-15);
+    color: var(--gray-web);
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+    .status-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .status-timeline::before {
+        top: 0;
+        left: 25px;
+        width: 4px;
+        height: 100%;
+    }
+
+    .status-step {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        padding: 0;
+    }
+
+    .step-icon {
+        margin: 0;
+    }
+}

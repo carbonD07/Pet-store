@@ -1,0 +1,11 @@
+[
+  {
+    "id": "USR-1766022028076-722",
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@example.com",
+    "phone": "+27123456789",
+    "password": "$2b$10$cZtPD0CYYRSnLmiEaBKz6uAVa/gFFzQ.LbkrpY9D7gEtPRUVB9Y5.",
+    "createdAt": "2025-12-18T01:40:28.076Z"
+  }
+]
