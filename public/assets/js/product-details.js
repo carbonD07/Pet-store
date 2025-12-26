@@ -258,7 +258,10 @@ function renderProductDetails(product) {
     
     <div class="product-info">
       <h1 class="product-title">${product.name}</h1>
-      <p class="product-price" id="main-price">R${product.price.toFixed(2)}</p>
+      <p class="product-price" id="main-price">
+        R${product.price.toFixed(2)}
+        ${product.stock <= 0 ? '<span class="badge-oos" style="position:static; margin-left:10px; font-size: 0.5em; vertical-align: middle;">Sold Out</span>' : ''}
+      </p>
       
       <div class="rating-wrapper" style="margin-bottom: 20px; color: var(--portland-orange);">
         ${generateStars(product.rating)}
@@ -281,7 +284,9 @@ function renderProductDetails(product) {
         </div>
       </div>
       
-      <button class="add-to-cart-btn" id="add-to-cart-detail">Add to Cart</button>
+      <button class="add-to-cart-btn ${product.stock <= 0 ? 'btn-disabled' : ''}" id="add-to-cart-detail" ${product.stock <= 0 ? 'disabled' : ''}>
+        ${product.stock <= 0 ? 'Out of Stock' : 'Add to Cart'}
+      </button>
       
       ${benefitsHtml}
       ${ingredientsHtml}

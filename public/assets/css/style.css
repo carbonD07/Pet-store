@@ -1424,3 +1424,34 @@ body {
   border-color: var(--portland-orange);
   color: var(--white);
 }
+/*-----------------------------------*  #OUT OF STOCK
+\*-----------------------------------*/
+
+.badge-oos {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--bittersweet);
+  color: var(--white);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-4);
+  z-index: 1;
+}
+
+.btn-disabled {
+  background-color: var(--silver-chalice) !important;
+  color: var(--white) !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.product-card.oos .card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  z-index: 0;
+}

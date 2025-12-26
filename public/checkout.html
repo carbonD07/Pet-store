@@ -57,44 +57,60 @@
     <main>
         <section class="section checkout">
             <div class="container">
-                <h1 class="h2 section-title">Checkout</h1>
-
                 <div class="checkout-grid">
 
                     <!-- Shipping & Payment Form -->
                     <div class="checkout-form-wrapper">
                         <form id="checkout-form">
 
-                            <h3 class="h3 form-title">Shipping Address</h3>
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" id="address" name="address" required placeholder="123 Pet Street">
-                            </div>
-                            <div class="form-row">
+                            <!-- Shipping Details -->
+                            <div class="checkout-card">
+                                <div class="form-header">
+                                    <h2 class="form-title">
+                                        <ion-icon name="location-outline"></ion-icon>
+                                        Shipping Details
+                                    </h2>
+                                    <p class="form-subtitle">Where should we send your order?</p>
+                                </div>
+
                                 <div class="form-group">
-                                    <label for="city">City</label>
-                                    <input type="text" id="city" name="city" required placeholder="New York">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="e.g. John Doe">
                                 </div>
                                 <div class="form-group">
-                                    <label for="zip">Zip Code</label>
-                                    <input type="text" id="zip" name="zip" required placeholder="10001">
+                                    <label for="address">Street Address</label>
+                                    <input type="text" id="address" name="address" required
+                                        placeholder="e.g. 123 Pet Street">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city" required placeholder="e.g. Cape Town">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zip">Postal Code</label>
+                                        <input type="text" id="zip" name="zip" required placeholder="e.g. 8001">
+                                    </div>
                                 </div>
                             </div>
 
-                            <h3 class="h3 form-title">Payment Method</h3>
+                            <div class="payment-section-title">
+                                <h2 class="form-title">
+                                    <ion-icon name="card-outline"></ion-icon>
+                                    Payment Method
+                                </h2>
+                                <p class="form-subtitle">All transactions are secure and encrypted.</p>
+                            </div>
 
+                            <!-- Payment Selection -->
                             <div class="payment-method-select">
                                 <label class="method-option">
                                     <input type="radio" name="payment-method" value="card" checked>
                                     <span class="method-label">
-                                        <span>Credit Card</span>
+                                        <span class="method-name">Credit / Debit Card</span>
                                         <div class="method-logos">
-                                            <img src="./assets/images/visa.png" alt="Visa" width="30">
-                                            <img src="./assets/images/mastercard.png" alt="Mastercard" width="30">
+                                            <img src="./assets/images/visa.png" alt="Visa">
+                                            <img src="./assets/images/mastercard.png" alt="Mastercard">
                                         </div>
                                     </span>
                                 </label>
@@ -102,62 +118,76 @@
                                 <label class="method-option">
                                     <input type="radio" name="payment-method" value="paypal">
                                     <span class="method-label">
-                                        <span>PayPal</span>
-                                        <img src="./assets/images/paypal.png" alt="PayPal" width="60">
+                                        <span class="method-name">PayPal</span>
+                                        <div class="method-logos">
+                                            <img src="./assets/images/paypal.png" alt="PayPal">
+                                        </div>
                                     </span>
                                 </label>
                             </div>
 
                             <!-- Credit Card Form -->
                             <div id="card-payment-section">
-                                <div class="payment-card-visual">
-                                    <div class="card-front">
+                                <div class="payment-card-wrapper">
+                                    <div class="payment-card-visual">
                                         <div class="card-chip"></div>
-                                        <div class="card-logo">Visa</div>
+                                        <div class="card-logo">VISA</div>
                                         <div class="card-number-display">#### #### #### ####</div>
                                         <div class="card-details-row">
                                             <div class="card-holder-display">FULL NAME</div>
                                             <div class="card-expiry-display">MM/YY</div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="card-number">Card Number</label>
-                                    <input type="text" id="card-number" name="card-number"
-                                        placeholder="0000 0000 0000 0000" maxlength="19">
-                                </div>
-                                <div class="form-row">
                                     <div class="form-group">
-                                        <label for="expiry">Expiry Date</label>
-                                        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5">
+                                        <label for="card-number">Card Number</label>
+                                        <input type="text" id="card-number" name="card-number"
+                                            placeholder="0000 0000 0000 0000" maxlength="19">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="cvc">CVC</label>
-                                        <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="3">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Expiry Date</label>
+                                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY"
+                                                maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvc">CVC</label>
+                                            <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="3">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- PayPal Section -->
                             <div id="paypal-payment-section" style="display: none;">
-                                <p class="paypal-text">You will be redirected to PayPal to complete your purchase
-                                    securely.</p>
+                                <div class="paypal-text">
+                                    <p>You will be redirected to PayPal to complete your purchase securely.</p>
+                                </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100" id="pay-button">Pay Now</button>
                         </form>
                     </div>
 
                     <!-- Order Summary -->
-                    <div class="order-summary">
-                        <h3 class="h3 summary-title">Order Summary</h3>
-                        <ul class="summary-list" id="order-summary-list">
-                            <!-- Items injected by JS -->
-                        </ul>
-                        <div class="summary-total">
-                            <span>Total</span>
-                            <span id="order-total">R0.00</span>
+                    <div class="order-summary-wrapper">
+                        <div class="summary-card">
+                            <h3 class="h3 summary-title">Order Summary</h3>
+
+                            <ul class="summary-list" id="order-summary-list">
+                                <!-- Items injected by JS -->
+                            </ul>
+
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span id="order-total">R0.00</span>
+                            </div>
+
+                            <button type="submit" form="checkout-form" class="pay-btn" id="pay-button">Pay Now</button>
+
+                            <div class="secure-badge">
+                                <ion-icon name="lock-closed"></ion-icon>
+                                <span>SSL Secure Checkout</span>
+                            </div>
                         </div>
                     </div>
 

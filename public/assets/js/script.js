@@ -193,9 +193,11 @@ if (productList) {
     .then(response => response.json())
     .then(products => {
       products.slice(0, 4).forEach(product => {
+        const isOutOfStock = product.stock <= 0;
         const productItem = document.createElement('li');
+
         productItem.innerHTML = `
-          <div class="product-card">
+          <div class="product-card ${isOutOfStock ? 'oos' : ''}">
             <div class="card-banner img-holder" style="--width: 360; --height: 360;">
               <a href="/product-details.html?id=${product.id}">
                 <img src="${product.image}" width="360" height="360" loading="lazy"
@@ -204,8 +206,10 @@ if (productList) {
                   alt="${product.name}" class="img-cover hover">
               </a>
 
-              <button class="card-action-btn" aria-label="add to card" title="Add To Card">
-                <ion-icon name="bag-add-outline" aria-hidden="true"></ion-icon>
+              ${isOutOfStock ? '<span class="badge-oos">Sold Out</span>' : ''}
+
+              <button class="card-action-btn ${isOutOfStock ? 'btn-disabled' : ''}" aria-label="add to card" title="${isOutOfStock ? 'Out of Stock' : 'Add To Cart'}" ${isOutOfStock ? 'disabled' : ''}>
+                <ion-icon name="${isOutOfStock ? 'ban-outline' : 'bag-add-outline'}" aria-hidden="true"></ion-icon>
               </button>
             </div>
 
@@ -228,10 +232,12 @@ if (productList) {
 
         // Attach event listener to the button
         const addToCartBtn = productItem.querySelector('.card-action-btn');
-        addToCartBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          addToCart(product);
-        });
+        if (!isOutOfStock) {
+          addToCartBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            addToCart(product);
+          });
+        }
 
         productList.appendChild(productItem);
       });

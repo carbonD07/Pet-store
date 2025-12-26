@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitter - Order History</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .history-container {
+            max-width: 1000px;
+            margin: 150px auto 50px;
+            /* Adjust top margin for fixed header */
+            padding: 20px;
+        }
+
+        .history-title {
+            font-family: var(--ff-carter_one);
+            font-size: var(--fs-2);
+            color: var(--eerie-black);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: var(--shadow-1);
+            border-radius: var(--radius-10);
+            overflow: hidden;
+        }
+
+        .order-table th,
+        .order-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--platinum);
+        }
+
+        .order-table th {
+            background-color: var(--portland-orange);
+            color: var(--white);
+            font-family: var(--ff-nunito_sans);
+            font-weight: var(--fw-700);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .status-paid {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-shipped {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+
+        @media (max-width: 768px) {
+            .order-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- HEADER -->
+    <header class="header" data-header>
+        <div class="container">
+            <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
+            </button>
+
+            <a href="/" class="logo">Kitter</a>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a href="/#home" class="navbar-link" data-nav-link>Home</a></li>
+                    <li class="navbar-item"><a href="/#shop" class="navbar-link" data-nav-link>Shop</a></li>
+                    <li class="navbar-item"><a href="/collections.html" class="navbar-link"
+                            data-nav-link>Collections</a></li>
+                    <li class="navbar-item"><a href="/blog.html" class="navbar-link" data-nav-link>Blogs</a></li>
+                    <li class="navbar-item"><a href="/contact.html" class="navbar-link" data-nav-link>Contact</a></li>
+                    <li class="navbar-item"><a href="/history.html" class="navbar-link" data-nav-link>My Orders</a></li>
+                </ul>
+                <a href="/login.html" class="navbar-action-btn">Log In</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="action-btn" aria-label="Search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+                <a href="/login.html" class="action-btn user" aria-label="User">
+                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                </a>
+                <button class="action-btn" aria-label="cart" data-cart-toggler>
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge" data-cart-badge>0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CART SIDEBAR (Reused) -->
+    <div class="cart-sidebar" data-cart-sidebar>
+        <div class="cart-header">
+            <h2 class="h2 section-title">Your Cart</h2>
+            <button class="nav-toggle-btn active" aria-label="close cart" data-cart-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+        </div>
+        <ul class="cart-item-list" data-cart-list></ul>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <p class="h3">Total:</p>
+                <p class="h3" data-cart-total>R0.00</p>
+            </div>
+            <button class="btn btn-primary" onclick="window.location.href='/checkout.html'">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" data-cart-toggler></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="history-container">
+            <h1 class="history-title">My Order History</h1>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Order ID</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="order-history-body">
+                    <!-- Orders will be injected here -->
+                </tbody>
+            </table>
+            <p id="loading-msg" style="text-align:center; padding: 20px;">Loading orders...</p>
+            <p id="no-orders-msg" style="text-align:center; padding: 20px; display:none;">No past orders found.</p>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/history.js"></script>
+
+</body>
+
+</html>

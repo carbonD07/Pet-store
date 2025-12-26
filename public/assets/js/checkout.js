@@ -94,12 +94,45 @@ checkoutForm.addEventListener('submit', (e) => {
 
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked').value;
 
-    // Simulate Processing
     const btn = checkoutForm.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = "Processing...";
     btn.disabled = true;
 
+    // If Card Payment (Stripe)
+    if (selectedMethod === 'card') {
+        const fullRootPath = window.location.origin; // Get base URL for absolute paths if needed in future
+
+        // Prepare items for Stripe (ensure image path is absolute or handled by backend)
+        // Note: Stripe needs live URLs for images to show them on checkout page.
+        // For local development, images might not show up on Stripe Checkout unless using a tunnel (ngrok).
+
+        fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ items: cart })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.url) {
+                    window.location.href = data.url; // Redirect to Stripe
+                } else {
+                    throw new Error(data.error || 'Failed to create checkout session');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Payment initialization failed: ' + error.message);
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+
+        return; // Stop execution here, wait for redirect
+    }
+
+    // Existing Logic for other methods (e.g. PayPal simulation) or as fallback
     const orderData = {
         items: cart,
         total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
