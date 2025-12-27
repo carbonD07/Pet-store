@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 const sendOrderConfirmation = async (order) => {
     try {
         const mailOptions = {
-            from: '"Kitter Store" <no-reply@kitter.com>',
+            from: '"GoodBoy Store" <no-reply@goodboy.com>',
             to: order.customer.email,
             subject: `Order Confirmation - #${order._id}`,
             html: `
