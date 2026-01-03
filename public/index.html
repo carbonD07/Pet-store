@@ -350,6 +350,26 @@
             <span class="span">Best</span> Seller
           </h2>
 
+          <div class="filter-bar">
+            <div class="filter-group">
+              <select class="filter-select" id="category-filter" aria-label="Filter by category">
+                <option value="all">All Categories</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="fish">Fish</option>
+                <option value="bird">Bird</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <select class="filter-select" id="price-sort" aria-label="Sort by price">
+                <option value="default">Sort by</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
           <ul class="grid-list" id="product-list">
             <!-- Products will be dynamically inserted here -->
           </ul>
@@ -747,6 +767,35 @@
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+
+  <!-- SEARCH MODAL -->
+  <div class="search-modal" data-search-modal>
+    <div class="search-container">
+      <div class="search-header">
+        <h2 class="search-title">Search Products</h2>
+        <button class="search-close-btn" aria-label="close search" data-search-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <div class="search-form">
+        <input type="search" name="search" placeholder="Search for products, brands..." class="search-input"
+          data-search-input>
+        <button class="search-btn-overlay" aria-label="search">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <div class="search-results" data-search-results>
+        <!-- Search results will be injected here -->
+        <p class="no-results" style="display:none;">No products found</p>
+        <!-- Initial state suggestion -->
+        <div class="no-results" data-search-initial>
+          <p>Start typing to search...</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 
     - ionicon link

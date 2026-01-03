@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - GoodBoy</title>
+    <title>Checkout - Pawject</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/checkout.css">
@@ -26,7 +26,7 @@
                 <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
             </button>
 
-            <a href="/" class="logo">GoodBoy</a>
+            <a href="/" class="logo">Pawject</a>
 
             <nav class="navbar" data-navbar>
                 <ul class="navbar-list">
@@ -57,111 +57,166 @@
     <main>
         <section class="section checkout">
             <div class="container">
+                <!-- Checkout Progress -->
+                <div class="checkout-progress">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Shipping</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Payment</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Review</span>
+                    </div>
+                </div>
+
                 <div class="checkout-grid">
 
                     <!-- Shipping & Payment Form -->
                     <div class="checkout-form-wrapper">
                         <form id="checkout-form">
 
-                            <!-- Shipping Details -->
-                            <div class="checkout-card">
-                                <div class="form-header">
-                                    <h2 class="form-title">
-                                        <ion-icon name="location-outline"></ion-icon>
-                                        Shipping Details
-                                    </h2>
-                                    <p class="form-subtitle">Where should we send your order?</p>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" required placeholder="e.g. John Doe">
-                                </div>
-                                <div class="form-group">
-                                    <label for="address">Street Address</label>
-                                    <input type="text" id="address" name="address" required
-                                        placeholder="e.g. 123 Pet Street">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="city">City</label>
-                                        <input type="text" id="city" name="city" required placeholder="e.g. Cape Town">
+                            <!-- Step 1: Shipping Details -->
+                            <div id="step-1" class="checkout-step active">
+                                <div class="checkout-card">
+                                    <div class="form-header">
+                                        <h2 class="form-title">
+                                            <ion-icon name="person-outline"></ion-icon>
+                                            Contact Info
+                                        </h2>
                                     </div>
                                     <div class="form-group">
-                                        <label for="zip">Postal Code</label>
-                                        <input type="text" id="zip" name="zip" required placeholder="e.g. 8001">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" required
+                                            placeholder="e.g. john@example.com" class="input-field">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" required
+                                            placeholder="e.g. +1 234 567 890" class="input-field">
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="payment-section-title">
-                                <h2 class="form-title">
-                                    <ion-icon name="card-outline"></ion-icon>
-                                    Payment Method
-                                </h2>
-                                <p class="form-subtitle">All transactions are secure and encrypted.</p>
-                            </div>
-
-                            <!-- Payment Selection -->
-                            <div class="payment-method-select">
-                                <label class="method-option">
-                                    <input type="radio" name="payment-method" value="card" checked>
-                                    <span class="method-label">
-                                        <span class="method-name">Credit / Debit Card</span>
-                                        <div class="method-logos">
-                                            <img src="./assets/images/visa.png" alt="Visa">
-                                            <img src="./assets/images/mastercard.png" alt="Mastercard">
-                                        </div>
-                                    </span>
-                                </label>
-
-                                <label class="method-option">
-                                    <input type="radio" name="payment-method" value="paypal">
-                                    <span class="method-label">
-                                        <span class="method-name">PayPal</span>
-                                        <div class="method-logos">
-                                            <img src="./assets/images/paypal.png" alt="PayPal">
-                                        </div>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <!-- Credit Card Form -->
-                            <div id="card-payment-section">
-                                <div class="payment-card-wrapper">
-                                    <div class="payment-card-visual">
-                                        <div class="card-chip"></div>
-                                        <div class="card-logo">VISA</div>
-                                        <div class="card-number-display">#### #### #### ####</div>
-                                        <div class="card-details-row">
-                                            <div class="card-holder-display">FULL NAME</div>
-                                            <div class="card-expiry-display">MM/YY</div>
-                                        </div>
+                                <div class="checkout-card" style="margin-top: 30px;">
+                                    <div class="form-header">
+                                        <h2 class="form-title">
+                                            <ion-icon name="location-outline"></ion-icon>
+                                            Shipping Address
+                                        </h2>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="card-number">Card Number</label>
-                                        <input type="text" id="card-number" name="card-number"
-                                            placeholder="0000 0000 0000 0000" maxlength="19">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" name="name" required placeholder="e.g. John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Street Address</label>
+                                        <input type="text" id="address" name="address" required
+                                            placeholder="e.g. 123 Pet Street">
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="expiry">Expiry Date</label>
-                                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY"
-                                                maxlength="5">
+                                            <label for="city">City</label>
+                                            <input type="text" id="city" name="city" required
+                                                placeholder="e.g. Cape Town">
                                         </div>
                                         <div class="form-group">
-                                            <label for="cvc">CVC</label>
-                                            <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="3">
+                                            <label for="zip">Postal Code</label>
+                                            <input type="text" id="zip" name="zip" required placeholder="e.g. 8001">
                                         </div>
                                     </div>
                                 </div>
+
+                                <button type="button" class="pay-btn" id="next-to-payment"
+                                    style="margin-top: 30px;">Continue to Payment</button>
                             </div>
 
-                            <!-- PayPal Section -->
-                            <div id="paypal-payment-section" style="display: none;">
-                                <div class="paypal-text">
-                                    <p>You will be redirected to PayPal to complete your purchase securely.</p>
+                            <!-- Step 2: Payment Method -->
+                            <div id="step-2" class="checkout-step" style="display: none;">
+                                <div class="checkout-card">
+                                    <div class="payment-section-title" style="margin-top: 0;">
+                                        <h2 class="form-title">
+                                            <ion-icon name="card-outline"></ion-icon>
+                                            Payment Method
+                                        </h2>
+                                        <p class="form-subtitle">All transactions are secure and encrypted.</p>
+                                    </div>
+
+                                    <!-- Payment Selection -->
+                                    <div class="payment-method-select">
+                                        <label class="method-option">
+                                            <input type="radio" name="payment-method" value="card" checked>
+                                            <span class="method-label">
+                                                <span class="method-name">Credit / Debit Card</span>
+                                                <div class="method-logos">
+                                                    <img src="./assets/images/visa.png" alt="Visa">
+                                                    <img src="./assets/images/mastercard.png" alt="Mastercard">
+                                                </div>
+                                            </span>
+                                        </label>
+
+                                        <label class="method-option">
+                                            <input type="radio" name="payment-method" value="paypal">
+                                            <span class="method-label">
+                                                <span class="method-name">PayPal</span>
+                                                <div class="method-logos">
+                                                    <img src="./assets/images/paypal.png" alt="PayPal">
+                                                </div>
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    <!-- Credit Card Form -->
+                                    <div id="card-payment-section">
+                                        <div class="payment-card-wrapper">
+                                            <div class="payment-card-visual">
+                                                <div class="card-chip"></div>
+                                                <div class="card-logo">VISA</div>
+                                                <div class="card-number-display">#### #### #### ####</div>
+                                                <div class="card-details-row">
+                                                    <div class="card-holder-display">FULL NAME</div>
+                                                    <div class="card-expiry-display">MM/YY</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="card-number">Card Number</label>
+                                                <input type="text" id="card-number" name="card-number"
+                                                    placeholder="0000 0000 0000 0000" maxlength="19">
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="expiry">Expiry Date</label>
+                                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY"
+                                                        maxlength="5">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="cvc">CVC</label>
+                                                    <input type="text" id="cvc" name="cvc" placeholder="123"
+                                                        maxlength="3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PayPal Section -->
+                                    <div id="paypal-payment-section" style="display: none;">
+                                        <div class="paypal-text">
+                                            <p>You will be redirected to PayPal to complete your purchase securely.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step-actions" style="display: flex; gap: 15px; margin-top: 30px;">
+                                        <button type="button" class="btn btn-secondary" id="back-to-shipping"
+                                            style="flex: 1; padding: 15px; border-radius: 50px; font-weight: 700;">Back</button>
+                                        <button type="submit" class="pay-btn" id="pay-button" style="flex: 2;">Pay
+                                            Now</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -210,7 +265,51 @@
         </div>
     </div>
 
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+            <h2 class="h2">Payment Successful!</h2>
+            <p>Thank you for your order. Your pets will love it!</p>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+            <a href="/order-tracker.html" class="btn btn-secondary"
+                style="margin-top: 10px; display: block; text-align: center;">Track Your Order</a>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div class="search-modal" data-search-modal>
+        <div class="search-container">
+            <div class="search-header">
+                <h2 class="search-title">Search Products</h2>
+                <button class="search-close-btn" aria-label="close search" data-search-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+
+            <div class="search-form">
+                <input type="search" name="search" placeholder="Search for products, brands..." class="search-input"
+                    data-search-input>
+                <button class="search-btn-overlay" aria-label="search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+
+            <div class="search-results" data-search-results>
+                <!-- Search results will be injected here -->
+                <p class="no-results" style="display:none;">No products found</p>
+                <!-- Initial state suggestion -->
+                <div class="no-results" data-search-initial>
+                    <p>Start typing to search...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./assets/js/checkout.js"></script>
 </body>

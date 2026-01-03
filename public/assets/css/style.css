@@ -1424,6 +1424,7 @@ body {
   border-color: var(--portland-orange);
   color: var(--white);
 }
+
 /*-----------------------------------*  #OUT OF STOCK
 \*-----------------------------------*/
 
@@ -1454,4 +1455,217 @@ body {
   inset: 0;
   background-color: hsla(0, 0%, 100%, 0.5);
   z-index: 0;
+}
+
+/*-----------------------------------*\
+  #PRODUCT DETAILS ZOOM
+\*-----------------------------------*/
+
+.product-image-wrapper {
+  overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+}
+
+.product-image {
+  transition: transform 0.2s ease-out;
+  transform-origin: center center;
+  width: 100%;
+  display: block;
+}
+
+.product-image-wrapper:hover .product-image {
+  transform: scale(2);
+}
+
+/*-----------------------------------*\
+  #SEARCH MODAL
+\*-----------------------------------*/
+
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+}
+
+.search-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-container {
+  background-color: var(--white);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: var(--radius-10);
+  position: relative;
+  transform: translateY(-50px);
+  transition: var(--transition-1);
+}
+
+.search-modal.active .search-container {
+  transform: translateY(0);
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-title {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+}
+
+.search-close-btn {
+  font-size: 2.4rem;
+  color: var(--battleship-gray);
+  transition: var(--transition-1);
+}
+
+.search-close-btn:hover {
+  color: var(--portland-orange);
+}
+
+.search-form {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 1px solid var(--platinum);
+  border-radius: var(--radius-4);
+  font-size: var(--fs-6);
+  font-family: inherit;
+  transition: var(--transition-1);
+}
+
+.search-input:focus {
+  border-color: var(--portland-orange);
+  outline: none;
+}
+
+.search-btn-overlay {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: var(--battleship-gray);
+  font-size: 2rem;
+}
+
+.search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid var(--platinum);
+  transition: var(--transition-1);
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.search-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--radius-4);
+}
+
+.search-item-info {
+  flex: 1;
+}
+
+.search-item-title {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  color: var(--eerie-black);
+  margin-bottom: 5px;
+}
+
+.search-item-price {
+  font-size: var(--fs-8);
+  color: var(--portland-orange);
+  font-weight: var(--fw-700);
+}
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  color: var(--battleship-gray);
+}
+
+
+/*-----------------------------------*\
+  #FILTER BAR
+\*-----------------------------------*/
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-select {
+  padding: 10px 15px;
+  border: 1px solid var(--platinum);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: var(--fs-7);
+  color: var(--eerie-black);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.filter-select:focus,
+.filter-select:hover {
+  border-color: var(--portland-orange);
+  outline: none;
+}
+
+@media (max-width: 575px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

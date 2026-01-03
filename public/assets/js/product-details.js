@@ -18,6 +18,7 @@ if (productId) {
 
       if (product) {
         renderProductDetails(product);
+        renderRelatedProducts(product, products);
       } else {
         productDetailsContainer.innerHTML = '<p>Product not found.</p>';
       }
@@ -441,3 +442,109 @@ function generateStars(rating) {
   }
   return starsHtml;
 }
+
+/**
+ * IMAGE ZOOM FUNCTIONALITY
+ */
+const imageWrapper = document.querySelector('.product-image-wrapper');
+const mainImage = document.getElementById('main-image');
+
+if (imageWrapper && mainImage) {
+  imageWrapper.addEventListener('mousemove', function (e) {
+    const { left, top, width, height } = imageWrapper.getBoundingClientRect();
+    const x = (e.clientX - left) / width * 100;
+    const y = (e.clientY - top) / height * 100;
+
+    mainImage.style.transformOrigin = `${x}% ${y}%`;
+  });
+
+  imageWrapper.addEventListener('mouseleave', function () {
+    mainImage.style.transformOrigin = 'center center';
+    mainImage.style.transform = 'scale(1)';
+  });
+
+  imageWrapper.addEventListener('mouseenter', function () {
+    mainImage.style.transform = 'scale(2)';
+  });
+}
+
+/**
+ * RELATED PRODUCTS
+ */
+function renderRelatedProducts(currentProduct, allProducts) {
+  const relatedContainer = document.getElementById('related-products');
+  const relatedList = document.getElementById('related-product-list');
+
+  if (!relatedContainer || !relatedList) return;
+
+  // Filter products: Same category, not the current product
+  const related = allProducts.filter(p =>
+    p.category &&
+    currentProduct.category &&
+    p.category.toLowerCase() === currentProduct.category.toLowerCase() &&
+    p.id !== currentProduct.id
+  ).slice(0, 4); // Limit to 4
+
+  if (related.length === 0) return;
+
+  relatedContainer.style.display = 'block';
+  relatedList.innerHTML = '';
+
+  related.forEach(product => {
+    const isOutOfStock = product.stock <= 0;
+    const productItem = document.createElement('li');
+
+    productItem.innerHTML = `
+      <div class="product-card ${isOutOfStock ? 'oos' : ''}">
+        <div class="card-banner img-holder" style="--width: 360; --height: 360;">
+          <a href="/product-details.html?id=${product.id}">
+            <img src="${product.image}" width="360" height="360" loading="lazy"
+              alt="${product.name}" class="img-cover default">
+            <img src="${product.imageHover}" width="360" height="360" loading="lazy"
+              alt="${product.name}" class="img-cover hover">
+          </a>
+
+          ${isOutOfStock ? '<span class="badge-oos">Sold Out</span>' : ''}
+
+          <button class="card-action-btn ${isOutOfStock ? 'btn-disabled' : ''}" aria-label="add to card" title="${isOutOfStock ? 'Out of Stock' : 'Add To Cart'}" ${isOutOfStock ? 'disabled' : ''}>
+            <ion-icon name="${isOutOfStock ? 'ban-outline' : 'bag-add-outline'}" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <div class="card-content">
+          <div class="wrapper">
+            <div class="rating-wrapper ${product.rating === 0 ? 'gray' : ''}">
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+              <ion-icon name="star" aria-hidden="true"></ion-icon>
+            </div>
+            <span class="span">(${product.reviews})</span>
+          </div>
+
+          <h3 class="h3">
+            <a href="/product-details.html?id=${product.id}" class="card-title">${product.name}</a>
+          </h3>
+
+          <data class="price" value="${product.price}">R${product.price.toFixed(2)}</data>
+        </div>
+      </div>
+    `;
+
+    // Attach event listener to the button
+    const addToCartBtn = productItem.querySelector('.card-action-btn');
+    if (!isOutOfStock) {
+      addToCartBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Check if window.addToCart is available
+        if (window.addToCart) {
+          window.addToCart(product);
+        }
+      });
+    }
+
+    relatedList.appendChild(productItem);
+  });
+}
+

@@ -94,9 +94,34 @@ function updateTrackerUI(order) {
     }
 }
 
+// Show Map and Driver Details if Shipped or Delivered
+const trackerMap = document.getElementById('tracker-map');
+const deliveryDetails = document.getElementById('delivery-details');
+const mapStatusMsg = document.getElementById('map-status-msg');
+
+if (currentStatusIndex >= 2) { // Shipped or Delivered
+    trackerMap.style.display = 'block';
+    deliveryDetails.style.display = 'block';
+
+    if (currentStatusIndex === 2) {
+        mapStatusMsg.textContent = "Your order is on the way!";
+    } else {
+        mapStatusMsg.textContent = "Your order has been delivered!";
+        // Hide vehicle info or update it
+        document.getElementById('estimated-arrival').textContent = "Delivered " + (dateElements[3] ? dateElements[3].textContent : '');
+    }
+} else {
+    trackerMap.style.display = 'none';
+    deliveryDetails.style.display = 'none';
+}
+}
+
 function resetTrackerUI() {
     trackerStatus.style.display = 'none';
     statusSteps.forEach(step => {
         step.classList.remove('active', 'completed');
     });
+    // Hide extra sections
+    document.getElementById('tracker-map').style.display = 'none';
+    document.getElementById('delivery-details').style.display = 'none';
 }

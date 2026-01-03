@@ -182,67 +182,136 @@ setInterval(slideNext, 7000);
 // Initial UI update
 updateCartUI();
 
+/**
+ * GLOBAL PRODUCTS DATA
+ */
+let allProducts = [];
+
+const fetchProducts = function () {
+  return fetch('/api/products')
+    .then(response => response.json())
+    .then(products => {
+      allProducts = products;
+      return products;
+    })
+    .catch(error => console.error('Error fetching products:', error));
+}
+
+
 
 /**
  * Fetch and Render Products
  */
 const productList = document.getElementById('product-list');
 
-if (productList) {
-  fetch('/api/products')
-    .then(response => response.json())
-    .then(products => {
-      products.slice(0, 4).forEach(product => {
-        const isOutOfStock = product.stock <= 0;
-        const productItem = document.createElement('li');
+// Render Product List to Shop Section
+function renderProductList(products) {
+  if (!productList) return;
 
-        productItem.innerHTML = `
-          <div class="product-card ${isOutOfStock ? 'oos' : ''}">
-            <div class="card-banner img-holder" style="--width: 360; --height: 360;">
-              <a href="/product-details.html?id=${product.id}">
-                <img src="${product.image}" width="360" height="360" loading="lazy"
-                  alt="${product.name}" class="img-cover default">
-                <img src="${product.imageHover}" width="360" height="360" loading="lazy"
-                  alt="${product.name}" class="img-cover hover">
-              </a>
+  productList.innerHTML = '';
 
-              ${isOutOfStock ? '<span class="badge-oos">Sold Out</span>' : ''}
+  if (products.length === 0) {
+    productList.innerHTML = '<p class="no-results">No products found matching your criteria.</p>';
+    return;
+  }
 
-              <button class="card-action-btn ${isOutOfStock ? 'btn-disabled' : ''}" aria-label="add to card" title="${isOutOfStock ? 'Out of Stock' : 'Add To Cart'}" ${isOutOfStock ? 'disabled' : ''}>
-                <ion-icon name="${isOutOfStock ? 'ban-outline' : 'bag-add-outline'}" aria-hidden="true"></ion-icon>
-              </button>
+  products.forEach(product => {
+    const isOutOfStock = product.stock <= 0;
+    const productItem = document.createElement('li');
+
+    productItem.innerHTML = `
+      <div class="product-card ${isOutOfStock ? 'oos' : ''}">
+        <div class="card-banner img-holder" style="--width: 360; --height: 360;">
+          <a href="/product-details.html?id=${product.id}">
+            <img src="${product.image}" width="360" height="360" loading="lazy"
+              alt="${product.name}" class="img-cover default">
+            <img src="${product.imageHover}" width="360" height="360" loading="lazy"
+              alt="${product.name}" class="img-cover hover">
+          </a>
+
+          ${isOutOfStock ? '<span class="badge-oos">Sold Out</span>' : ''}
+
+          <button class="card-action-btn ${isOutOfStock ? 'btn-disabled' : ''}" aria-label="add to card" title="${isOutOfStock ? 'Out of Stock' : 'Add To Cart'}" ${isOutOfStock ? 'disabled' : ''}>
+            <ion-icon name="${isOutOfStock ? 'ban-outline' : 'bag-add-outline'}" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <div class="card-content">
+          <div class="wrapper">
+            <div class="rating-wrapper ${product.rating === 0 ? 'gray' : ''}">
+              ${generateStars(product.rating)}
             </div>
-
-            <div class="card-content">
-              <div class="wrapper">
-                <div class="rating-wrapper ${product.rating === 0 ? 'gray' : ''}">
-                  ${generateStars(product.rating)}
-                </div>
-                <span class="span">(${product.reviews})</span>
-              </div>
-
-              <h3 class="h3">
-                <a href="/product-details.html?id=${product.id}" class="card-title">${product.name}</a>
-              </h3>
-
-              <data class="price" value="${product.price}">R${product.price.toFixed(2)}</data>
-            </div>
+            <span class="span">(${product.reviews})</span>
           </div>
-        `;
 
-        // Attach event listener to the button
-        const addToCartBtn = productItem.querySelector('.card-action-btn');
-        if (!isOutOfStock) {
-          addToCartBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            addToCart(product);
-          });
-        }
+          <h3 class="h3">
+            <a href="/product-details.html?id=${product.id}" class="card-title">${product.name}</a>
+          </h3>
 
-        productList.appendChild(productItem);
+          <data class="price" value="${product.price}">R${product.price.toFixed(2)}</data>
+        </div>
+      </div>
+    `;
+
+    // Attach event listener to the button
+    const addToCartBtn = productItem.querySelector('.card-action-btn');
+    if (!isOutOfStock) {
+      addToCartBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        addToCart(product);
       });
-    })
-    .catch(error => console.error('Error fetching products:', error));
+    }
+
+    productList.appendChild(productItem);
+  });
+}
+
+/**
+ * FILTER & SORT FUNCTIONALITY
+ */
+const categoryFilter = document.getElementById('category-filter');
+const priceSort = document.getElementById('price-sort');
+
+const applyFilters = function () {
+  let filtered = [...allProducts];
+
+  // Category Filter
+  if (categoryFilter) {
+    const category = categoryFilter.value;
+    if (category !== 'all') {
+      filtered = filtered.filter(product =>
+        product.category && product.category.toLowerCase() === category.toLowerCase()
+      );
+    }
+  }
+
+  // Sort
+  if (priceSort) {
+    const sortValue = priceSort.value;
+    if (sortValue === 'low-high') {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortValue === 'high-low') {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+  }
+
+  renderProductList(filtered);
+}
+
+if (categoryFilter) {
+  categoryFilter.addEventListener('change', applyFilters);
+}
+
+if (priceSort) {
+  priceSort.addEventListener('change', applyFilters);
+}
+
+// Initial product fetch
+// Initial product fetch
+if (productList) {
+  fetchProducts().then(products => {
+    if (products) renderProductList(products);
+  });
 }
 
 function generateStars(rating) {
@@ -256,3 +325,103 @@ function generateStars(rating) {
   }
   return starsHtml;
 }
+
+
+
+/**
+ * SEARCH FUNCTIONALITY
+ */
+
+const searchTogglers = document.querySelectorAll("[data-search-toggler]");
+const searchModal = document.querySelector("[data-search-modal]");
+const searchInput = document.querySelector("[data-search-input]");
+const searchResultsContainer = document.querySelector("[data-search-results]");
+const searchInitialState = document.querySelector("[data-search-initial]");
+
+// Toggle Search Modal
+const toggleSearch = function () {
+  searchModal.classList.toggle("active");
+  document.body.classList.toggle("active"); // Prevent scrolling when modal is open
+
+  if (searchModal.classList.contains("active")) {
+    searchInput.focus();
+    // Fetch products if not already fetched
+    if (allProducts.length === 0) {
+      fetchAllProducts();
+    }
+  }
+}
+
+addEventOnElem(searchTogglers, "click", toggleSearch);
+
+// Fetch all products for search
+const fetchAllProducts = function () {
+  fetch('/api/products')
+    .then(response => response.json())
+    .then(products => {
+      allProducts = products;
+    })
+    .catch(error => console.error('Error fetching products for search:', error));
+}
+
+// Filter and Display Search Results
+const filterProducts = function (query) {
+  if (!query) {
+    searchResultsContainer.innerHTML = '';
+    searchResultsContainer.appendChild(searchInitialState);
+    searchInitialState.style.display = 'block';
+    return;
+  }
+
+  const filteredProducts = allProducts.filter(product =>
+    product.name.toLowerCase().includes(query.toLowerCase()) ||
+    (product.category && product.category.toLowerCase().includes(query.toLowerCase())) ||
+    (product.brand && product.brand.toLowerCase().includes(query.toLowerCase()))
+  );
+
+  renderSearchResults(filteredProducts);
+}
+
+// Render Search Results
+const renderSearchResults = function (products) {
+  searchResultsContainer.innerHTML = '';
+
+  if (products.length === 0) {
+    const noResults = document.createElement('p');
+    noResults.classList.add('no-results');
+    noResults.textContent = 'No products found';
+    searchResultsContainer.appendChild(noResults);
+    return;
+  }
+
+  products.forEach(product => {
+    const searchItem = document.createElement('a');
+    searchItem.href = `/product-details.html?id=${product.id}`;
+    searchItem.classList.add('search-item');
+    searchItem.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" class="search-item-image">
+      <div class="search-item-info">
+        <h4 class="search-item-title">${product.name}</h4>
+        <p class="search-item-price">R${product.price.toFixed(2)}</p>
+      </div>
+    `;
+    // Close modal on click
+    searchItem.addEventListener('click', toggleSearch);
+    searchResultsContainer.appendChild(searchItem);
+  });
+}
+
+// Event Listener for Input
+if (searchInput) {
+  searchInput.addEventListener('input', function (e) {
+    filterProducts(e.target.value.trim());
+  });
+}
+
+// Redirect User Icon to Account Page (for demo purposes)
+document.addEventListener('DOMContentLoaded', () => {
+  const userBtn = document.querySelector('.action-btn.user');
+  if (userBtn) {
+    userBtn.href = '/account.html';
+  }
+});

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Order - Pawject</title>
+    <title>My Account - Pawject</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/tracker.css">
+    <link rel="stylesheet" href="./assets/css/account.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -43,7 +43,7 @@
             <div class="header-actions">
                 <button class="action-btn" aria-label="Search"><ion-icon name="search-outline"
                         aria-hidden="true"></ion-icon></button>
-                <a href="/login.html" class="action-btn user" aria-label="User"><ion-icon name="person-outline"
+                <a href="/account.html" class="action-btn user" aria-label="User"><ion-icon name="person-outline"
                         aria-hidden="true"></ion-icon></a>
                 <button class="action-btn" aria-label="cart" data-cart-toggler>
                     <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
@@ -55,94 +55,136 @@
     </header>
 
     <main>
-        <section class="section tracker">
+        <section class="section account">
             <div class="container">
-                <h1 class="h2 section-title">Track Your Order</h1>
+                <h1 class="h2 section-title">My Account</h1>
 
-                <div class="tracker-form-wrapper">
-                    <form id="tracker-form" class="tracker-form">
-                        <div class="form-group">
-                            <label for="order-id">Order ID</label>
-                            <input type="text" id="order-id" name="order-id" placeholder="e.g., #123456" required>
+                <div class="account-dashboard">
+                    <!-- Sidebar Navigation -->
+                    <aside class="account-sidebar">
+                        <div class="user-profile-summary">
+                            <div class="user-avatar">
+                                <ion-icon name="person-circle"></ion-icon>
+                            </div>
+                            <h3 class="h3" id="user-name-display">Welcome Back!</h3>
+                            <p class="user-email-display">user@example.com</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Track</button>
-                    </form>
+                        <nav class="account-nav">
+                            <button class="nav-btn active" data-tab="overview">
+                                <ion-icon name="grid-outline"></ion-icon> Overview
+                            </button>
+                            <button class="nav-btn" data-tab="orders">
+                                <ion-icon name="bag-check-outline"></ion-icon> My Orders
+                            </button>
+                            <button class="nav-btn" data-tab="subscriptions">
+                                <ion-icon name="calendar-outline"></ion-icon> Subscriptions
+                            </button>
+                            <button class="nav-btn" data-tab="rewards">
+                                <ion-icon name="ribbon-outline"></ion-icon> Pawsome Rewards
+                            </button>
+                            <button class="nav-btn logout-btn">
+                                <ion-icon name="log-out-outline"></ion-icon> Logout
+                            </button>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content Area -->
+                    <div class="account-content">
+
+                        <!-- Overview Tab -->
+                        <div id="overview" class="tab-content active">
+                            <h3 class="h3 content-title">Dashboard Overview</h3>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <h4 class="h4">Loyalty Points</h4>
+                                    <div class="stat-value text-orange">250</div>
+                                    <p class="stat-desc">Silver Tier</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h4 class="h4">Active Subscriptions</h4>
+                                    <div class="stat-value">2</div>
+                                    <p class="stat-desc">Next shipment: Aug 15</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h4 class="h4">Recent Order</h4>
+                                    <div class="stat-value">#12345</div>
+                                    <p class="stat-desc">Delivered</p>
+                                </div>
+                            </div>
+
+                            <div class="recent-orders-preview">
+                                <h4 class="h4" style="margin-bottom: 20px;">Recent Activity</h4>
+                                <ul class="order-list-preview" id="recent-orders-list">
+                                    <!-- Populated by JS -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Orders Tab -->
+                        <div id="orders" class="tab-content">
+                            <h3 class="h3 content-title">Order History</h3>
+                            <div class="orders-list-container" id="all-orders-list">
+                                <!-- Populated by JS -->
+                                <p>Loading orders...</p>
+                            </div>
+                        </div>
+
+                        <!-- Subscriptions Tab -->
+                        <div id="subscriptions" class="tab-content">
+                            <h3 class="h3 content-title">My Subscriptions</h3>
+                            <div class="subscriptions-container">
+                                <div class="sub-card">
+                                    <img src="./assets/images/product-1.jpg" alt="Product" class="sub-img">
+                                    <div class="sub-info">
+                                        <h4 class="h4">Premium Dog Food</h4>
+                                        <p>Frequency: Every 4 Weeks</p>
+                                        <p>Next Delivery: <strong>Aug 15, 2023</strong></p>
+                                    </div>
+                                    <div class="sub-actions">
+                                        <button class="btn-secondary small">Skip</button>
+                                        <button class="btn-primary small">Edit</button>
+                                    </div>
+                                </div>
+                                <!-- More subscriptions can be added here -->
+                            </div>
+                        </div>
+
+                        <!-- Rewards Tab -->
+                        <div id="rewards" class="tab-content">
+                            <h3 class="h3 content-title">Pawsome Rewards</h3>
+                            <div class="rewards-banner">
+                                <div class="points-circle">
+                                    <span class="points-num">250</span>
+                                    <span class="points-label">Points</span>
+                                </div>
+                                <div class="rewards-text">
+                                    <h4 class="h4">Silver Member</h4>
+                                    <p>Earn 50 more points to reach Gold Tier!</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 83%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="h4" style="margin-top: 30px; margin-bottom: 20px;">Redeem Rewards</h4>
+                            <div class="rewards-grid">
+                                <div class="reward-card">
+                                    <div class="reward-icon"><ion-icon name="gift"></ion-icon></div>
+                                    <h5>R50 Off Coupon</h5>
+                                    <p>Cost: 500 Points</p>
+                                    <button class="btn-secondary small" disabled>Redeem</button>
+                                </div>
+                                <div class="reward-card">
+                                    <div class="reward-icon"><ion-icon name="paw"></ion-icon></div>
+                                    <h5>Free Toy</h5>
+                                    <p>Cost: 300 Points</p>
+                                    <button class="btn-secondary small" disabled>Redeem</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-
-                <div class="tracker-status" id="tracker-status" style="display: none;">
-                    <!-- Status Timeline -->
-                    <div class="status-timeline">
-                        <div class="status-step completed">
-                            <div class="step-icon">
-                                <ion-icon name="cart-outline"></ion-icon>
-                            </div>
-                            <p class="step-label">Order Placed</p>
-                            <p class="step-date"></p>
-                        </div>
-                        <div class="status-step active">
-                            <div class="step-icon">
-                                <ion-icon name="cube-outline"></ion-icon>
-                            </div>
-                            <p class="step-label">Processing</p>
-                            <p class="step-date"></p>
-                        </div>
-                        <div class="status-step">
-                            <div class="step-icon">
-                                <ion-icon name="airplane-outline"></ion-icon>
-                            </div>
-                            <p class="step-label">Shipped</p>
-                        </div>
-                        <div class="status-step">
-                            <div class="step-icon">
-                                <ion-icon name="home-outline"></ion-icon>
-                            </div>
-                            <p class="step-label">Delivered</p>
-                        </div>
-                    </div>
-
-                    <!-- Live Map Simulation -->
-                    <div class="tracker-map-container" id="tracker-map">
-                        <div class="map-placeholder">
-                            <img src="./assets/images/map-placeholder.jpg" alt="Live Tracking Map" class="map-image">
-                            <div class="driver-pin">
-                                <ion-icon name="car-sport"></ion-icon>
-                            </div>
-                            <div class="map-overlay-message">
-                                <span id="map-status-msg">Your order is being processed at our warehouse.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Delivery Details -->
-                    <div class="delivery-details-card" id="delivery-details" style="display: none;">
-                        <h3 class="h3 card-title">Delivery Details</h3>
-                        <div class="driver-info">
-                            <div class="driver-avatar">
-                                <ion-icon name="person-circle-outline"></ion-icon>
-                            </div>
-                            <div class="driver-text">
-                                <p class="driver-name">Driver: <span id="driver-name">John D.</span></p>
-                                <p class="driver-rating">
-                                    <ion-icon name="star"></ion-icon> 4.9 (120 deliveries)
-                                </p>
-                            </div>
-                            <div class="contact-actions">
-                                <button class="action-btn-small call" title="Call Driver">
-                                    <ion-icon name="call-outline"></ion-icon>
-                                </button>
-                                <button class="action-btn-small message" title="Message Driver">
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="vehicle-info">
-                            <p><strong>Vehicle:</strong> <span id="vehicle-info">White Van - XYZ 123</span></p>
-                            <p><strong>Estimated Arrival:</strong> <span id="estimated-arrival">2:00 PM - 4:00 PM</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
@@ -220,7 +262,7 @@
     </footer>
 
     <script src="./assets/js/script.js" defer></script>
-    <script src="./assets/js/tracker.js" defer></script>
+    <script src="./assets/js/account.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
