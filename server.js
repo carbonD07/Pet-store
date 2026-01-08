@@ -19,7 +19,36 @@ const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('Connected to MongoDB'))
+    .then(async () => {
+        console.log('Connected to MongoDB');
+
+        // Auto-seed if empty
+        try {
+            const count = await Product.countDocuments();
+            if (count === 0) {
+                console.log('Database empty, seeding products...');
+                const jsonPath = path.join(__dirname, 'data', 'products.json');
+
+                if (fs.existsSync(jsonPath)) {
+                    const jsonData = fs.readFileSync(jsonPath, 'utf-8');
+                    const products = JSON.parse(jsonData);
+
+                    // Add default stock if missing
+                    const productsWithStock = products.map(p => ({
+                        ...p,
+                        stock: p.stock !== undefined ? p.stock : 100
+                    }));
+
+                    await Product.insertMany(productsWithStock);
+                    console.log('Database seeded successfully!');
+                } else {
+                    console.log('products.json not found, skipping seed.');
+                }
+            }
+        } catch (seedErr) {
+            console.error('Error seeding database:', seedErr);
+        }
+    })
     .catch(err => console.error('MongoDB connection error:', err));
 
 // Stripe Webhook Endpoint (Must be before express.json() middleware)
