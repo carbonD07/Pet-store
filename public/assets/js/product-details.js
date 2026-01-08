@@ -1,35 +1,45 @@
 'use strict';
 
-const productDetailsContainer = document.getElementById('product-details-container');
+document.addEventListener('DOMContentLoaded', () => {
+  const productDetailsContainer = document.getElementById('product-details-container');
 
-// Helper to get query param
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+  // Helper to get query param
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
 
-const productId = parseInt(getQueryParam('id'));
+  const productId = parseInt(getQueryParam('id'));
 
-if (productId) {
-  fetch('/api/products')
-    .then(response => response.json())
-    .then(products => {
-      const product = products.find(p => p.id === productId);
+  if (productId) {
+    fetch('/api/products')
+      .then(response => response.json())
+      .then(products => {
+        if (!Array.isArray(products)) {
+          console.error('Expected array of products but got:', products);
+          productDetailsContainer.innerHTML = '<p>Error loading product details. Please try again later.</p>';
+          return;
+        }
 
-      if (product) {
-        renderProductDetails(product);
-        renderRelatedProducts(product, products);
-      } else {
-        productDetailsContainer.innerHTML = '<p>Product not found.</p>';
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching product:', error);
-      productDetailsContainer.innerHTML = '<p>Error loading product details.</p>';
-    });
-} else {
-  productDetailsContainer.innerHTML = '<p>No product selected.</p>';
-}
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+          renderProductDetails(product);
+          renderRelatedProducts(product, products);
+        } else {
+          productDetailsContainer.innerHTML = '<p>Product not found.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching product:', error);
+        productDetailsContainer.innerHTML = '<p>Error loading product details.</p>';
+      });
+  } else {
+    if (productDetailsContainer) {
+      productDetailsContainer.innerHTML = '<p>No product selected.</p>';
+    }
+  }
+});
 
 function renderProductDetails(product) {
   // Build benefits section if available

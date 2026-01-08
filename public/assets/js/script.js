@@ -191,10 +191,17 @@ const fetchProducts = function () {
   return fetch('/api/products')
     .then(response => response.json())
     .then(products => {
+      if (!Array.isArray(products)) {
+        console.error('Expected array of products but got:', products);
+        return [];
+      }
       allProducts = products;
       return products;
     })
-    .catch(error => console.error('Error fetching products:', error));
+    .catch(error => {
+      console.error('Error fetching products:', error);
+      return [];
+    });
 }
 
 
