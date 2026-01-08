@@ -12,8 +12,18 @@ if (dogFoodList) {
   fetch('/api/products')
     .then(response => response.json())
     .then(products => {
+      if (!Array.isArray(products)) {
+        console.error('Expected array of products but got:', products);
+        dogFoodList.innerHTML = '<p>Error loading products. Please try again later.</p>';
+        return;
+      }
+
+      console.log('Fetched products:', products.length);
+
       // Store all relevant products (Dog Food and Brit Premium)
       allProducts = products.filter(product => product.category === 'Dog Food' || product.category === 'Brit Premium');
+
+      console.log('Filtered products:', allProducts.length);
 
       // Initial Render (All)
       renderProducts(allProducts);
@@ -42,7 +52,10 @@ if (dogFoodList) {
       });
 
     })
-    .catch(error => console.error('Error fetching products:', error));
+    .catch(error => {
+      console.error('Error fetching products:', error);
+      dogFoodList.innerHTML = '<p>Unable to load products at this time.</p>';
+    });
 }
 
 function renderProducts(products) {
