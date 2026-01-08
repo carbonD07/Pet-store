@@ -92,27 +92,31 @@ function updateTrackerUI(order) {
         deliveredDate.setDate(orderDate.getDate() + 5);
         if (dateElements[3]) dateElements[3].textContent = deliveredDate.toLocaleDateString('en-US', options);
     }
-}
+    // Show Map and Driver Details if Shipped or Delivered
+    const trackerMap = document.getElementById('tracker-map');
+    const deliveryDetails = document.getElementById('delivery-details');
+    const mapStatusMsg = document.getElementById('map-status-msg');
 
-// Show Map and Driver Details if Shipped or Delivered
-const trackerMap = document.getElementById('tracker-map');
-const deliveryDetails = document.getElementById('delivery-details');
-const mapStatusMsg = document.getElementById('map-status-msg');
+    if (trackerMap && deliveryDetails && mapStatusMsg) {
+        if (currentStatusIndex >= 2) { // Shipped or Delivered
+            trackerMap.style.display = 'block';
+            deliveryDetails.style.display = 'block';
 
-if (currentStatusIndex >= 2) { // Shipped or Delivered
-    trackerMap.style.display = 'block';
-    deliveryDetails.style.display = 'block';
-
-    if (currentStatusIndex === 2) {
-        mapStatusMsg.textContent = "Your order is on the way!";
-    } else {
-        mapStatusMsg.textContent = "Your order has been delivered!";
-        // Hide vehicle info or update it
-        document.getElementById('estimated-arrival').textContent = "Delivered " + (dateElements[3] ? dateElements[3].textContent : '');
+            if (currentStatusIndex === 2) {
+                mapStatusMsg.textContent = "Your order is on the way!";
+            } else {
+                mapStatusMsg.textContent = "Your order has been delivered!";
+                // Hide vehicle info or update it
+                const estimatedArrival = document.getElementById('estimated-arrival');
+                if (estimatedArrival) {
+                    estimatedArrival.textContent = "Delivered " + (dateElements[3] ? dateElements[3].textContent : '');
+                }
+            }
+        } else {
+            trackerMap.style.display = 'none';
+            deliveryDetails.style.display = 'none';
+        }
     }
-} else {
-    trackerMap.style.display = 'none';
-    deliveryDetails.style.display = 'none';
 }
 
 
