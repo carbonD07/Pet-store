@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Filtered products:', allProducts.length);
 
         // Initial Render (All)
-        renderProducts(allProducts);
+        renderProducts(allProducts, dogFoodList);
 
         // Event Listeners for Filters
         filterButtons.forEach(btn => {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
               filteredProducts = allProducts.filter(p => p.category === 'Brit Premium');
             }
 
-            renderProducts(filteredProducts);
+            renderProducts(filteredProducts, dogFoodList);
           });
         });
 
@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function renderProducts(products) {
+function renderProducts(products, dogFoodList) {
+  if (!dogFoodList) return;
   dogFoodList.innerHTML = '';
 
   if (products.length === 0) {
