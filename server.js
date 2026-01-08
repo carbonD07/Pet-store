@@ -22,31 +22,38 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(async () => {
         console.log('Connected to MongoDB');
 
-        // Auto-seed if empty
+        // Auto-seed / Sync products
         try {
-            const count = await Product.countDocuments();
-            if (count === 0) {
-                console.log('Database empty, seeding products...');
-                const jsonPath = path.join(__dirname, 'data', 'products.json');
+            console.log('Syncing products from file...');
+            const jsonPath = path.join(__dirname, 'data', 'products.json');
 
-                if (fs.existsSync(jsonPath)) {
-                    const jsonData = fs.readFileSync(jsonPath, 'utf-8');
-                    const products = JSON.parse(jsonData);
+            if (fs.existsSync(jsonPath)) {
+                const jsonData = fs.readFileSync(jsonPath, 'utf-8');
+                const products = JSON.parse(jsonData);
 
-                    // Add default stock if missing
-                    const productsWithStock = products.map(p => ({
-                        ...p,
-                        stock: p.stock !== undefined ? p.stock : 100
-                    }));
+                // Prepare bulk operations
+                const bulkOps = products.map(product => ({
+                    updateOne: {
+                        filter: { id: product.id },
+                        update: {
+                            $set: {
+                                ...product,
+                                stock: product.stock !== undefined ? product.stock : 100
+                            }
+                        },
+                        upsert: true
+                    }
+                }));
 
-                    await Product.insertMany(productsWithStock);
-                    console.log('Database seeded successfully!');
-                } else {
-                    console.log('products.json not found, skipping seed.');
+                if (bulkOps.length > 0) {
+                    const result = await Product.bulkWrite(bulkOps);
+                    console.log(`Synced products: ${result.upsertedCount} inserted, ${result.modifiedCount} updated.`);
                 }
+            } else {
+                console.log('products.json not found, skipping sync.');
             }
         } catch (seedErr) {
-            console.error('Error seeding database:', seedErr);
+            console.error('Error syncing database:', seedErr);
         }
     })
     .catch(err => console.error('MongoDB connection error:', err));
