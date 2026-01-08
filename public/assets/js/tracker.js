@@ -114,7 +114,7 @@ if (currentStatusIndex >= 2) { // Shipped or Delivered
     trackerMap.style.display = 'none';
     deliveryDetails.style.display = 'none';
 }
-}
+
 
 function resetTrackerUI() {
     trackerStatus.style.display = 'none';
