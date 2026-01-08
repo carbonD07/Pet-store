@@ -3,60 +3,62 @@
 /**
  * Fetch and Render Dog Food Products with Filtering
  */
-const dogFoodList = document.getElementById('dog-food-list');
-const filterButtons = document.querySelectorAll('.filter-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const dogFoodList = document.getElementById('dog-food-list');
+  const filterButtons = document.querySelectorAll('.filter-btn');
 
-let allProducts = [];
+  let allProducts = [];
 
-if (dogFoodList) {
-  fetch('/api/products')
-    .then(response => response.json())
-    .then(products => {
-      if (!Array.isArray(products)) {
-        console.error('Expected array of products but got:', products);
-        dogFoodList.innerHTML = '<p>Error loading products. Please try again later.</p>';
-        return;
-      }
+  if (dogFoodList) {
+    fetch('/api/products')
+      .then(response => response.json())
+      .then(products => {
+        if (!Array.isArray(products)) {
+          console.error('Expected array of products but got:', products);
+          dogFoodList.innerHTML = '<p>Error loading products. Please try again later.</p>';
+          return;
+        }
 
-      console.log('Fetched products:', products.length);
+        console.log('Fetched products:', products.length);
 
-      // Store all relevant products (Dog Food and Brit Premium)
-      allProducts = products.filter(product => product.category === 'Dog Food' || product.category === 'Brit Premium');
+        // Store all relevant products (Dog Food and Brit Premium)
+        allProducts = products.filter(product => product.category === 'Dog Food' || product.category === 'Brit Premium');
 
-      console.log('Filtered products:', allProducts.length);
+        console.log('Filtered products:', allProducts.length);
 
-      // Initial Render (All)
-      renderProducts(allProducts);
+        // Initial Render (All)
+        renderProducts(allProducts);
 
-      // Event Listeners for Filters
-      filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterButtons.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
-          btn.classList.add('active');
+        // Event Listeners for Filters
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
 
-          const filter = btn.getAttribute('data-filter');
-          let filteredProducts = [];
+            const filter = btn.getAttribute('data-filter');
+            let filteredProducts = [];
 
-          if (filter === 'all') {
-            filteredProducts = allProducts;
-          } else if (filter === 'emperor') {
-            filteredProducts = allProducts.filter(p => p.category === 'Dog Food');
-          } else if (filter === 'brit-premium') {
-            filteredProducts = allProducts.filter(p => p.category === 'Brit Premium');
-          }
+            if (filter === 'all') {
+              filteredProducts = allProducts;
+            } else if (filter === 'emperor') {
+              filteredProducts = allProducts.filter(p => p.category === 'Dog Food');
+            } else if (filter === 'brit-premium') {
+              filteredProducts = allProducts.filter(p => p.category === 'Brit Premium');
+            }
 
-          renderProducts(filteredProducts);
+            renderProducts(filteredProducts);
+          });
         });
-      });
 
-    })
-    .catch(error => {
-      console.error('Error fetching products:', error);
-      dogFoodList.innerHTML = '<p>Unable to load products at this time.</p>';
-    });
-}
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        dogFoodList.innerHTML = '<p>Unable to load products at this time.</p>';
+      });
+  }
+});
 
 function renderProducts(products) {
   dogFoodList.innerHTML = '';
