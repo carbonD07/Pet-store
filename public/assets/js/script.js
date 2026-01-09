@@ -65,7 +65,7 @@ const cartList = document.querySelector("[data-cart-list]");
 const cartTotalElement = document.querySelector("[data-cart-total]");
 const cartBadge = document.querySelector("[data-cart-badge]");
 
-let cart = JSON.parse(localStorage.getItem("kitter-cart")) || [];
+let cart = JSON.parse(localStorage.getItem("goodpetstore-cart")) || [];
 
 const toggleCart = function () {
   cartSidebar.classList.toggle("active");
@@ -105,7 +105,7 @@ const updateCartUI = function () {
 
   cartTotalElement.textContent = `R${total.toFixed(2)}`;
   cartBadge.textContent = totalItems;
-  localStorage.setItem("kitter-cart", JSON.stringify(cart));
+  localStorage.setItem("goodpetstore-cart", JSON.stringify(cart));
 }
 
 const addToCart = function (product, quantity = 1) {
