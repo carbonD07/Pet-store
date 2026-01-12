@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2022 codewithsadee
+ * copyright 2022 Mahlakhu
  */
 
 
@@ -1220,9 +1220,7 @@ body {
    * SERVICE
    */
 
-  .service .grid-list {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .service .grid-list {}
 
   .service-card .h3 {
     --fs-3: 2.4rem;

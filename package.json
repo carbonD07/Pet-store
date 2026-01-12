@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codewithsadee/kitter.git"
+    "url": "git+https://github.com/carbonD07/Pet-store.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mahlakhu",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/codewithsadee/kitter/issues"
+    "url": "https://github.com/carbonD07/Pet-store/issues"
   },
-  "homepage": "https://github.com/codewithsadee/kitter#readme",
+  "homepage": "https://github.com/carbonD07/Pet-store#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
