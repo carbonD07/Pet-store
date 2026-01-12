@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2025 Mahlakhu
+ * copyright 2025 Zolo
  */
 
 
@@ -20,8 +20,10 @@
    * colors
    */
 
-  --bright-yellow-crayola: hsl(36, 94%, 57%);
-  --portland-orange: hsl(15, 84%, 57%);
+  --bright-yellow-crayola: hsl(48, 100%, 50%);
+  /* Zolo Yellow */
+  --portland-orange: hsl(220, 100%, 50%);
+  /* Zolo Blue */
   --battleship-gray: hsl(0, 0%, 53%);
   --silver-chalice: hsl(0, 0%, 70%);
   --spanish-gray: hsl(0, 0%, 60%);

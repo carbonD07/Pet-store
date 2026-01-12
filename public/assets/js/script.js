@@ -65,7 +65,7 @@ const cartList = document.querySelector("[data-cart-list]");
 const cartTotalElement = document.querySelector("[data-cart-total]");
 const cartBadge = document.querySelector("[data-cart-badge]");
 
-let cart = JSON.parse(localStorage.getItem("goodpet-store-cart")) || [];
+let cart = JSON.parse(localStorage.getItem("zolo-cart")) || [];
 
 const toggleCart = function () {
   cartSidebar.classList.toggle("active");
@@ -105,7 +105,7 @@ const updateCartUI = function () {
 
   cartTotalElement.textContent = `R${total.toFixed(2)}`;
   cartBadge.textContent = totalItems;
-  localStorage.setItem("goodpet-store-cart", JSON.stringify(cart));
+  localStorage.setItem("zolo-cart", JSON.stringify(cart));
 }
 
 const addToCart = function (product, quantity = 1) {
