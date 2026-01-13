@@ -193,7 +193,7 @@ const fetchProducts = function () {
     .then(products => {
       if (!Array.isArray(products)) {
         console.error('Expected array of products but got:', products);
-        return [];
+        return products;
       }
       allProducts = products;
       return products;
@@ -317,6 +317,10 @@ if (priceSort) {
 // Initial product fetch
 if (productList) {
   fetchProducts().then(products => {
+    if (products.error) {
+      productList.innerHTML = `<p class="no-results">${products.error}</p>`;
+      return;
+    }
     if (products) renderProductList(products);
   });
 }

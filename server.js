@@ -185,7 +185,7 @@ app.get('/api/products', async (req, res) => {
         res.json(products);
     } catch (err) {
         console.error('Error fetching products:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: err.message || 'Internal Server Error' });
     }
 });
 

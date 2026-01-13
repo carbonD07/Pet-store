@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(products => {
         if (!Array.isArray(products)) {
           console.error('Expected array of products but got:', products);
-          dogFoodList.innerHTML = '<p>Error loading products. Please try again later.</p>';
+          const errorMessage = products.error || 'Error loading products. Please try again later.';
+          dogFoodList.innerHTML = `<p>${errorMessage}</p>`;
           return;
         }
 
