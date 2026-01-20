@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td>${p.id}</td>
                 <td>${p.name}</td>
+                <td>Base</td>
+                <td>-</td>
                 <td>R ${p.price.toFixed(2)}</td>
                 <td>${p.stock}</td>
                 <td><button class="btn-edit" onclick="openEditModal(${p.id})">Edit</button></td>
@@ -95,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     vRow.style.color = '#555';
                     vRow.innerHTML = `
                         <td></td>
-                        <td style="padding-left: 30px;">↳ ${v.size}</td>
+                        <td style="padding-left: 30px;">↳ Variant</td>
+                        <td>Variant</td>
+                        <td>${v.size}</td>
                         <td>R ${v.price.toFixed(2)}</td>
                         <td>-</td>
                         <td></td>
