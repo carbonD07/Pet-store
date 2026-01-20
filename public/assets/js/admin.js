@@ -130,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.className = 'variant-row';
                 div.innerHTML = `
                     <input type="text" value="${v.size}" disabled style="width: 80px;">
-                    <input type="number" step="0.01" value="${v.price}" class="variant-price" data-index="${index}" placeholder="Price">
+                    <input type="number" step="0.01" value="${v.price}" class="variant-price" data-index="${index}" placeholder="Price" style="width: 80px;">
+                    <input type="number" value="${v.stock !== undefined ? v.stock : 100}" class="variant-stock" data-index="${index}" placeholder="Stock" style="width: 80px;">
                 `;
                 variantsContainer.appendChild(div);
             });
@@ -169,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product.variants) {
             variants = product.variants.map((v, i) => ({
                 ...v,
-                price: parseFloat(document.querySelector(`.variant-price[data-index="${i}"]`).value)
+                price: parseFloat(document.querySelector(`.variant-price[data-index="${i}"]`).value),
+                stock: parseInt(document.querySelector(`.variant-stock[data-index="${i}"]`).value)
             }));
         }
 
