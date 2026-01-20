@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function renderProductDetails(product) {
+  const productDetailsContainer = document.getElementById('product-details-container');
   // Build benefits section if available
   let benefitsHtml = '';
   if (product.benefits && product.benefits.length > 0) {
