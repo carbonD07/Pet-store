@@ -320,7 +320,10 @@ app.post('/api/auth/login', async (req, res) => {
         res.json({
             message: 'Login successful',
             token,
-            user: userWithoutPassword
+            user: {
+                ...userWithoutPassword,
+                isAdmin: user.isAdmin
+            }
         });
 
     } catch (err) {
@@ -328,6 +331,54 @@ app.post('/api/auth/login', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+// Admin Route - Update Product (Protected)
+app.put('/api/products/:id', auth, async (req, res) => {
+    try {
+        // Verify Admin
+        const user = await User.findById(req.user.id);
+        if (!user || !user.isAdmin) {
+            return res.status(403).json({ error: 'Access denied. Admin only.' });
+        }
+
+        const { price, stock, variants } = req.body;
+        const productId = req.params.id;
+
+        // Find product by internal ID (number) or _id (string)
+        // Adjust based on how your frontend sends the ID. 
+        // Assuming 'id' from JSON is passed, which is a Number in your schema.
+
+        let query = {};
+        if (mongoose.Types.ObjectId.isValid(productId)) {
+            query = { _id: productId };
+        } else {
+            query = { id: parseInt(productId) };
+        }
+
+        const product = await Product.findOne(query);
+
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        // Only update fields that are provided
+        if (price !== undefined) product.price = price;
+        if (stock !== undefined) product.stock = stock;
+        if (variants !== undefined) product.variants = variants;
+
+        // Mark variants as modified if they were updated, to ensure Mongoose saves the Mixed type
+        if (variants !== undefined) product.markModified('variants');
+
+        await product.save();
+        res.json(product);
+
+    } catch (err) {
+        console.error('Update product error:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 
 app.get('/api/auth/user/:id', async (req, res) => {
     try {

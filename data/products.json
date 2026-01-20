@@ -2,7 +2,7 @@
   {
     "id": 9,
     "name": "Emperor Liver Flavour Dog Food",
-    "price": 250.00,
+    "price": 287.5,
     "image": "./assets/images/emperor-adult.png",
     "imageHover": "./assets/images/emperor-adult.png",
     "rating": 0,
@@ -64,7 +64,7 @@
   {
     "id": 10,
     "name": "Emperor Adult Small Breed Food",
-    "price": 250.00,
+    "price": 287.5,
     "image": "./assets/images/emperor-small-breed.png",
     "imageHover": "./assets/images/emperor-small-breed.png",
     "rating": 0,
@@ -126,7 +126,7 @@
   {
     "id": 11,
     "name": "Emperor Puppy Food",
-    "price": 245.00,
+    "price": 281.75,
     "image": "./assets/images/emperor-puppy.png",
     "imageHover": "./assets/images/emperor-puppy.png",
     "rating": 0,
@@ -188,7 +188,7 @@
   {
     "id": 12,
     "name": "Brit Premium | Dog Adult Medium (1kg / 3kg/ 8kg / 15kg)",
-    "price": 142.00,
+    "price": 163.3,
     "image": "https://dearpet.co.za/cdn/shop/files/Junior-Medium-Group-Image_1200x1200.jpg?v=1746607993",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/Junior-Medium-Group-Image_1200x1200.jpg?v=1746607993",
     "rating": 0,
@@ -198,19 +198,19 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 142.00
+        "price": 163.3
       },
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "8kg",
-        "price": 747.00
+        "price": 859.05
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -283,7 +283,7 @@
   {
     "id": 13,
     "name": "Brit Premium | Dog Junior Small (1kg / 3kg )",
-    "price": 142.00,
+    "price": 163.3,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_s_1200x1200.png?v=1746608900",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_s_1200x1200.png?v=1746608900",
     "rating": 0,
@@ -293,11 +293,11 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 142.00
+        "price": 163.3
       },
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       }
     ],
     "benefits": [
@@ -372,7 +372,7 @@
   {
     "id": 14,
     "name": "Brit Premium | Dog Adult Small (1kg / 3kg / 8kg)",
-    "price": 142.00,
+    "price": 163.3,
     "image": "https://dearpet.co.za/cdn/shop/files/Junior-Small-1kg_1200x1200.jpg?v=1746607691",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/Junior-Small-1kg_1200x1200.jpg?v=1746607691",
     "rating": 0,
@@ -382,15 +382,15 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 142.00
+        "price": 163.3
       },
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "8kg",
-        "price": 747.00
+        "price": 859.05
       }
     ],
     "benefits": [
@@ -463,7 +463,7 @@
   {
     "id": 15,
     "name": "Brit Premium | Dog Light Turkey & Oat (3kg/ 15kg)",
-    "price": 319.00,
+    "price": 366.85,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_light_1200x1200.png?v=1746609519",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_light_1200x1200.png?v=1746609519",
     "rating": 0,
@@ -473,11 +473,11 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -551,7 +551,7 @@
   {
     "id": 16,
     "name": "Brit Premium | Dog Senior Small & Medium (3kg / 8kg / 15kg)",
-    "price": 319.00,
+    "price": 366.85,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_s-m_1200x1200.png?v=1746609706",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_s-m_1200x1200.png?v=1746609706",
     "rating": 0,
@@ -561,15 +561,15 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "8kg",
-        "price": 747.00
+        "price": 859.05
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -640,7 +640,7 @@
   {
     "id": 17,
     "name": "Brit Premium | Dog Junior Medium (1kg / 3kg / 15kg)",
-    "price": 142.00,
+    "price": 163.3,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_m_1200x1200.png?v=1746609076",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_m_1200x1200.png?v=1746609076",
     "rating": 0,
@@ -650,15 +650,15 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 142.00
+        "price": 163.3
       },
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -729,7 +729,7 @@
   {
     "id": 18,
     "name": "Brit Premium | Dog Junior Large (3kg/ 15kg)",
-    "price": 319.00,
+    "price": 366.85,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_l_1200x1200.png?v=1746609206",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_junior_l_1200x1200.png?v=1746609206",
     "rating": 0,
@@ -739,11 +739,11 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 319.00
+        "price": 366.85
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -814,7 +814,7 @@
   {
     "id": 19,
     "name": "Brit Premium | Dog Adult Large (8kg/ 15kg)",
-    "price": 747.00,
+    "price": 859.05,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_adult_l_1200x1200.png?v=1746608250",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_adult_l_1200x1200.png?v=1746608250",
     "rating": 0,
@@ -824,11 +824,11 @@
     "variants": [
       {
         "size": "8kg",
-        "price": 747.00
+        "price": 859.05
       },
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
@@ -899,7 +899,7 @@
   {
     "id": 20,
     "name": "Brit Premium | Dog Senior Large & X Large (15kg)",
-    "price": 1277.00,
+    "price": 1468.55,
     "image": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_l-xl_1200x1200.png?v=1746609814",
     "imageHover": "https://dearpet.co.za/cdn/shop/files/BPbN_dry_senior_l-xl_1200x1200.png?v=1746609814",
     "rating": 0,
@@ -909,7 +909,7 @@
     "variants": [
       {
         "size": "15kg",
-        "price": 1277.00
+        "price": 1468.55
       }
     ],
     "benefits": [
