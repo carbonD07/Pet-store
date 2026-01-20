@@ -74,7 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTable(products) {
         productTableBody.innerHTML = '';
         products.forEach(p => {
+            // Base Product Row
             const row = document.createElement('tr');
+            row.style.fontWeight = 'bold';
+            row.style.backgroundColor = '#f9f9f9';
             row.innerHTML = `
                 <td>${p.id}</td>
                 <td>${p.name}</td>
@@ -83,6 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td><button class="btn-edit" onclick="openEditModal(${p.id})">Edit</button></td>
             `;
             productTableBody.appendChild(row);
+
+            // Variant Rows
+            if (p.variants && p.variants.length > 0) {
+                p.variants.forEach(v => {
+                    const vRow = document.createElement('tr');
+                    vRow.style.fontSize = '0.9em';
+                    vRow.style.color = '#555';
+                    vRow.innerHTML = `
+                        <td></td>
+                        <td style="padding-left: 30px;">↳ ${v.size}</td>
+                        <td>R ${v.price.toFixed(2)}</td>
+                        <td>-</td>
+                        <td></td>
+                    `;
+                    productTableBody.appendChild(vRow);
+                });
+            }
         });
 
         // Expose openEditModal to global scope
