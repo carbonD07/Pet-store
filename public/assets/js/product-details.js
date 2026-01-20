@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        const product = products.find(p => p.id === productId);
+        // Use loose equality to handle both string and number IDs
+        const product = products.find(p => p.id == productId);
 
         if (product) {
           renderProductDetails(product);
