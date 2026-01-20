@@ -198,19 +198,23 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 163.3
+        "price": 163.3,
+        "stock": 100
       },
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "8kg",
-        "price": 859.05
+        "price": 859.05,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -293,11 +297,13 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 163.3
+        "price": 163.3,
+        "stock": 100
       },
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -382,15 +388,18 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 163.3
+        "price": 163.3,
+        "stock": 100
       },
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "8kg",
-        "price": 859.05
+        "price": 859.05,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -473,11 +482,13 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -561,15 +572,18 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "8kg",
-        "price": 859.05
+        "price": 859.05,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -650,15 +664,18 @@
     "variants": [
       {
         "size": "1kg",
-        "price": 163.3
+        "price": 163.3,
+        "stock": 100
       },
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -739,11 +756,13 @@
     "variants": [
       {
         "size": "3kg",
-        "price": 366.85
+        "price": 366.85,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -824,11 +843,13 @@
     "variants": [
       {
         "size": "8kg",
-        "price": 859.05
+        "price": 859.05,
+        "stock": 100
       },
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [
@@ -909,7 +930,8 @@
     "variants": [
       {
         "size": "15kg",
-        "price": 1468.55
+        "price": 1468.55,
+        "stock": 100
       }
     ],
     "benefits": [

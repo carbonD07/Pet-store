@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <td>Variant</td>
                         <td>${v.size}</td>
                         <td>R ${v.price.toFixed(2)}</td>
-                        <td>-</td>
+                        <td>${v.stock || 100}</td>
                         <td></td>
                     `;
                     productTableBody.appendChild(vRow);

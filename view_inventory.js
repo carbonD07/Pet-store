@@ -34,7 +34,7 @@ async function viewInventory() {
                         Type: 'Variant',
                         Size: v.size,
                         Price: v.price,
-                        Stock: '-' // Variants might not track individual stock in this simple schema yet
+                        Stock: v.stock || 0
                     });
                 });
             }
