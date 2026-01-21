@@ -364,13 +364,13 @@ app.put('/api/products/:id', auth, async (req, res) => {
         // Only update fields that are provided
         if (price !== undefined) product.price = price;
         if (stock !== undefined) product.stock = stock;
-        if (variants !== undefined) product.variants = variants;
+        if (variants !== undefined) {
+            product.variants = variants;
+            product.markModified('variants');
+        }
 
-        // Mark variants as modified if they were updated, to ensure Mongoose saves the Mixed type
-        if (variants !== undefined) product.markModified('variants');
-
-        await product.save();
-        res.json(product);
+        const savedProduct = await product.save();
+        res.json(savedProduct);
 
     } catch (err) {
         console.error('Update product error:', err);

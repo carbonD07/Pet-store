@@ -30,7 +30,8 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 100, // Default stock
         min: 0
-    }
+    },
+    variants: [] // Explicitly define variants as an array to ensure it is saved
 }, { strict: false }); // Allow other fields (ingredients, variants, etc.) to be saved
 
 module.exports = mongoose.model('Product', productSchema);
