@@ -75,16 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
         productTableBody.innerHTML = '';
         products.forEach(p => {
             // Base Product Row
+            const hasVariants = p.variants && p.variants.length > 0;
             const row = document.createElement('tr');
             row.style.fontWeight = 'bold';
-            row.style.backgroundColor = '#f9f9f9';
+            row.style.backgroundColor = hasVariants ? '#e8f4f8' : '#f9f9f9'; // Slightly different color for parents
             row.innerHTML = `
                 <td>${p.id}</td>
                 <td>${p.name}</td>
-                <td>Base</td>
+                <td>${hasVariants ? 'Product' : 'Item'}</td>
                 <td>-</td>
-                <td>R ${p.price.toFixed(2)}</td>
-                <td>${p.stock}</td>
+                <td>${hasVariants ? '-' : 'R ' + p.price.toFixed(2)}</td>
+                <td>${hasVariants ? '-' : p.stock}</td>
                 <td><button class="btn-edit" onclick="openEditModal(${p.id})">Edit</button></td>
             `;
             productTableBody.appendChild(row);
