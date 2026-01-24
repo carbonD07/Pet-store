@@ -73,13 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderTable(products) {
         productTableBody.innerHTML = '';
-        products.forEach(p => {
+        products.forEach((p, index) => {
             // Base Product Row
             const hasVariants = p.variants && p.variants.length > 0;
             const row = document.createElement('tr');
             row.style.fontWeight = 'bold';
             row.style.backgroundColor = hasVariants ? '#e8f4f8' : '#f9f9f9'; // Slightly different color for parents
             row.innerHTML = `
+                <td>${index}</td>
                 <td>${p.id}</td>
                 <td>${p.name}</td>
                 <td>${hasVariants ? 'Product' : 'Item'}</td>
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     vRow.style.fontSize = '0.9em';
                     vRow.style.color = '#555';
                     vRow.innerHTML = `
+                        <td></td>
                         <td></td>
                         <td style="padding-left: 30px;">↳ Variant</td>
                         <td>Variant</td>
