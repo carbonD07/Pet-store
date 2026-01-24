@@ -205,6 +205,22 @@ app.get('/api/orders/history', auth, async (req, res) => {
     }
 });
 
+// Admin Route - Get All Orders
+app.get('/api/admin/orders', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user || !user.isAdmin) {
+            return res.status(403).json({ error: 'Access denied. Admin only.' });
+        }
+
+        const orders = await Order.find({}).sort({ createdAt: -1 });
+        res.json(orders);
+    } catch (err) {
+        console.error('Error fetching admin orders:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 app.post('/api/orders', auth, async (req, res) => {
     try {
         const newOrder = new Order({
