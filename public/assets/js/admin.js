@@ -9,14 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const editForm = document.getElementById('editForm');
     const variantsContainer = document.getElementById('variantsContainer');
 
-    // Check if already logged in
-    const token = localStorage.getItem('token');
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-
-    if (token && user.isAdmin) {
-        showDashboard();
-    }
-
     // Login Handler
     adminLoginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -47,19 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Login failed');
         }
     });
-
-    // Logout Handler
-    logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        location.reload();
-    });
-
-    function showDashboard() {
-        loginSection.style.display = 'none';
-        productSection.style.display = 'block';
-        loadProducts();
-    }
 
     async function loadProducts() {
         try {
@@ -208,4 +187,94 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error updating product');
         }
     });
+
+    // Logout Handler
+    logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        location.reload();
+    });
+
+    // --- Tab Navigation ---
+    window.switchTab = (tabName) => {
+        const tabs = document.querySelectorAll('.tab-content');
+        const btns = document.querySelectorAll('.tab-btn');
+
+        tabs.forEach(t => t.style.display = 'none');
+        btns.forEach(b => b.classList.remove('active'));
+
+        if (tabName === 'products') {
+            document.getElementById('productSection').style.display = 'block';
+            btns[0].classList.add('active'); // Assumes Products is first button
+            loadProducts();
+        } else if (tabName === 'orders') {
+            document.getElementById('orderSection').style.display = 'block';
+            btns[1].classList.add('active'); // Assumes Orders is second button
+            loadOrders();
+        }
+    };
+
+    // --- Orders Logic ---
+    async function loadOrders() {
+        try {
+            const token = localStorage.getItem('token');
+            const res = await fetch('/api/admin/orders', {
+                headers: { 'x-auth-token': token }
+            });
+            const orders = await res.json();
+
+            if (res.ok) {
+                renderOrdersTable(orders);
+            } else {
+                alert('Failed to load orders: ' + (orders.error || 'Unknown error'));
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Error loading orders');
+        }
+    }
+
+    function renderOrdersTable(orders) {
+        const tbody = document.getElementById('orderTableBody');
+        tbody.innerHTML = '';
+
+        if (orders.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="7">No orders found.</td></tr>';
+            return;
+        }
+
+        orders.forEach(order => {
+            const date = new Date(order.createdAt).toLocaleDateString() + ' ' + new Date(order.createdAt).toLocaleTimeString();
+            const customerName = order.customer ? order.customer.name : 'Guest';
+            const itemsSummary = order.items.map(i => `${i.quantity}x ${i.name}`).join(', ');
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${date}</td>
+                <td>${order._id.substring(0, 8)}...</td>
+                <td>${customerName}</td>
+                <td>${itemsSummary}</td>
+                <td>R ${order.total.toFixed(2)}</td>
+                <td><span class="status-badge ${order.status.toLowerCase()}">${order.status}</span></td>
+                <td>
+                    <button class="btn-edit" onclick="alert('Order ID: ${order._id}\\nCustomer: ${customerName}\\nAddress: ${order.customer.address}\\nItems: ${itemsSummary}')">View</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function showDashboard() {
+        loginSection.style.display = 'none';
+        switchTab('products');
+    }
+
+    // Initial Login Check
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+    if (token && user.isAdmin) {
+        showDashboard();
+    }
+
 });
